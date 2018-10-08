@@ -1,4 +1,4 @@
 export class BonLivraison {
     key?: string;
-    numero number;
+    numero: number;
 }

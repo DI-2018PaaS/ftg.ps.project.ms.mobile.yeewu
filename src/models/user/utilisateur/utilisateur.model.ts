@@ -7,7 +7,7 @@ export class Utilisateur {
     mail: string;
     phoneNumber: string;
     password: string;
-    creationDateUser: const;
-    lastConnectionDate: const;
+    creationDateUser: string;
+    lastConnectionDate: string;
     userActeurID: number;
 }

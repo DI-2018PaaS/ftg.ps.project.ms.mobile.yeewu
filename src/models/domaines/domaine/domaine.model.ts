@@ -7,6 +7,6 @@ export class Domaine
     status: true;
     userCreated: number;
     userLastModif: number;
-    createdDate: const;
-    dateastModif: const;
+    createdDate: string;
+    dateastModif: string;
 }

@@ -1,6 +1,6 @@
 export class BanqueActeur 
 {
     key?: string;
-    banqueId number;
-    acteurId number;
+    banqueId: number;
+    acteurId: number;
 }

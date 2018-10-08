@@ -4,11 +4,11 @@ export class Activite {
     nom: string;
     description: string;
     categorie: string;
-    dateDebut: const;
-    dateFin: const;
+    dateDebut: string;
+    dateFin: string;
     status: true;
     userCreated: number;
     userLastModif: number;
-    createdDate: const;
-    dateLastModif: const;
+    createdDate: string;
+    dateLastModif: string;
 }

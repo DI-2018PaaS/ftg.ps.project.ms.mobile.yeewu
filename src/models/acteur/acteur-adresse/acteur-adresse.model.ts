@@ -1,5 +1,5 @@
 export class ActeurAdresse {
     key?: string;
-    addresseId number;
-    acteurId number;
+    addresseId: number;
+    acteurId: number;
 }

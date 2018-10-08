@@ -9,6 +9,6 @@ export class Acheteur
     telephone: string;
     userCreated: number;
     userLastModif: number;
-    dateCreated: const;
-    dateLastModif: const;
+    dateCreated: string;
+    dateLastModif: string;
 }

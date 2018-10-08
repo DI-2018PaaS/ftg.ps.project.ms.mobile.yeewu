@@ -1,1 +1,24 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="mainContent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Yeewu Menu
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content id="side-menu21">
+    <ion-list id="yeewuMenu-list3">
+      <ion-item color="none" id="yeewuMenu-list-item1">
+        Profil
+      </ion-item>
+      <ion-item color="none" id="yeewuMenu-list-item2">
+        Settings
+      </ion-item>
+      <ion-item color="none" id="yeewuMenu-list-item3">
+        Deconnexion
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mainContent [root]="rootPage"></ion-nav>

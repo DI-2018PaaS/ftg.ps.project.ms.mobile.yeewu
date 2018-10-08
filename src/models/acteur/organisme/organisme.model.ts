@@ -1,4 +1,4 @@
-entity Organisme {
+export class Organisme {
     key?: string;
     organismeId: number;
     raisonSociale: string;
@@ -8,6 +8,6 @@ entity Organisme {
     telephone: string;
     userCreated: number;
     userLastModif: number;
-    dateCreated: const;
-    dateLastModif: const;
+    dateCreated: string;
+    dateLastModif: string;
 }

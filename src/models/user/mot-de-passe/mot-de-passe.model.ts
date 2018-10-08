@@ -2,9 +2,9 @@ export class MotDePasse
 {   
     key?: string;
     valeurMotDePasse: string;
-    mdpOwnerUser: const;
+    mdpOwnerUser: number;
     lastMotDePasse: string;
-    mdpCreationDate: const;
-    mdpLastConnectionDate: const;
-    mdpLastModificationDate: const;
+    mdpCreationDate: string;
+    mdpLastConnectionDate: string;
+    mdpLastModificationDate: string;
 }

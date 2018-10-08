@@ -3,9 +3,9 @@ export class Pret {
     numPret: number;
     dateCreation: Date;
     dateMisAjour: Date;
-    capitalRestant: BigDecimal;
+    capitalRestant: number;
     dateDernierRemb: Date;
-    idOwner: Long;
+    idOwner: number;
 }
 
 export class TypePret{

@@ -7,8 +7,8 @@ export class Adresse {
     pays: string;
     userCreated: number;
     userLastModif: number;
-    dateCreated: const;
-    dateLastModif: number;
+    dateCreated: string;
+    dateLastModif: string;
 }
 
 export class AdresseActeur {
