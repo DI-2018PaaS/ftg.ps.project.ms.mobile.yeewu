@@ -1,0 +1,83 @@
+<!--Login page component-->
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        Login
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<!--Content-->
+<ion-content text-center id="page6">
+    <div class="logo">
+        <img src="assets/img/logo_yeewu.png"/>
+    </div>
+    <div class="form-input">
+    <form id="login-form1">
+      <ion-list id="login-list1">
+        <ion-item id="login-input1">
+            <ion-icon name="mail" item-start></ion-icon>
+          <ion-label>
+            email
+          </ion-label>
+          <!--ion-input type="email" required placeholder="user" [(ngModel)]="eltModel.username"></ion-input-->
+          <ion-input [(ngModel)]="eltModel.username" name="Client"></ion-input>
+        </ion-item>
+        <ion-item id="login-input2">
+            <ion-icon name="key" item-start></ion-icon>
+          <ion-label>
+            password
+          </ion-label>
+          <!--ion-input type="password" required placeholder="pass" [(ngModel)]="eltModel.password" name=""></ion-input-->
+          <ion-input [(ngModel)]="eltModel.password" name="Client"></ion-input>
+        </ion-item>
+      </ion-list>
+      <!--div class="spacer" style="height:40px;" id="login-spacer1"></div-->
+      <ion-row>
+          <ion-col>
+              <button id="login-button2" ion-button clear small color="dark" block on-click="goToTestLogin()">
+                  Connexion
+                </button>
+          </ion-col>
+          <ion-col>
+              <button id="login-button4" ion-button clear small color="dark" block on-click="goToInscription()">
+                  Inscription
+                </button>
+          </ion-col>
+      </ion-row>
+    </form>
+    </div>
+    <button id="login-button3" ion-button clear color="positive" block on-click="goToMotDePasseOubli()">
+      mot de passe oublié
+    </button>
+    <ion-row>
+        <ion-col>
+            <button id="login-button5" ion-button round outline small color="blue" block>
+                <ion-icon name="logo-facebook"></ion-icon>  
+              </button>
+        </ion-col>
+        <ion-col>
+            <button id="login-button6" ion-button round outline small color="blue" block>
+                <ion-icon name="logo-googleplus"></ion-icon>  
+              </button>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <button id="login-button7" ion-button round outline small color="danger" block>
+                <ion-icon name="logo-twitter"></ion-icon>  
+              </button>
+        </ion-col>
+        <ion-col>
+            <button id="login-button8" ion-button round outline small color="danger" block>
+                <ion-icon name="logo-pinterest"></ion-icon>  
+              </button>
+        </ion-col>
+    </ion-row>
+        <button id="login-button8" ion-button clear right color="positive" block>
+            SKIP
+          </button>
+  </ion-content>

@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Gestion du Stock</ion-title>
+      <ion-buttons end> 
+        <button ion-button icon-only light color="shadowlite" (click)="goToSearch()">
+          <ion-icon ios="ios-search" md="md-search">
+          </ion-icon>
+        </button> 
+        <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="goToConnexion()">
+          <ion-icon ios="ios-contact" md="md-contact">
+          </ion-icon>
+        </button> 
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+<ion-content padding id="gestion-de-stock-id">
+    <ion-row>
+        <ion-col>
+          <button ion-button icon-start clear small icon-only item-left clear>
+              <ion-icon name="arrow-dropdown-circle"></ion-icon>
+            <ion-select>
+                  <ion-option (ionSelect)="goToEditerOperation()">Editer Operation</ion-option>
+                  <ion-option (ionSelect)="goToEditerRole()">Editer Role</ion-option>
+                  <ion-option (ionSelect)="goToEditerActivit()">Editer Activité</ion-option>
+                  <ion-option (ionSelect)="goToEditerDomaine()">Editer Domaine</ion-option>
+                </ion-select>
+          </button>
+        </ion-col>
+        <ion-col>
+            <button ion-button icon-start clear small icon-only item-right clear color="button-color" (click)="goToFiltrer()"> <ion-icon name="ios-funnel"></ion-icon>
+            </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button ion-button icon-start clear small icon-only clear color="button-color" (click)="goToTrier()">
+                  <ion-icon name="md-options" style="margin-right:6px"></ion-icon> {{"Sort"}}
+                </button> 
+        </ion-col>
+    </ion-row>
+	<ion-select>
+	  <ion-option (ionSelect)="goToPlafondLigneDeDepots()">Ligne de Depots</ion-option>
+	  <ion-option (ionSelect)="goToRemboursementPret()">Gestion de Remboursement</ion-option>
+	  <ion-option (ionSelect)="goToPlafondLigneDeCredit()">Ligne de Credit</ion-option>
+	  <ion-option (ionSelect)="goToGestionDesPaiements()">Gestion des Paiements</ion-option>
+	  <ion-option (ionSelect)="goToGestionDesCommandesL()">Gestion des Livraisons</ion-option>
+	</ion-select>
+    <ion-list>
+        <button ion-item (click)="goToGestionMagasinID()">
+            #NomProduit 	#Magasin
+            <ion-icon name="done-all" item-right></ion-icon>
+          </button>
+          <button ion-item (click)="goToGestionMagasinID()">
+              #NomProduit 	#Magasin
+            <ion-icon name="done-all" item-right></ion-icon>
+          </button>
+          <button ion-item (click)="goToGestionMagasinID()">
+              #NomProduit 	#Magasin
+            <ion-icon name="done-all" item-right></ion-icon>
+          </button>
+          <button ion-item (click)="goToGestionMagasinID()">
+              #NomProduit 	#Magasin
+            <ion-icon name="done-all" item-right></ion-icon>
+          </button>
+          <button ion-item (click)="goToGestionMagasinID()">
+              #NomProduit 	#Magasin
+            <ion-icon name="done-all" item-right></ion-icon>
+          </button>
+      </ion-list>
+</ion-content>

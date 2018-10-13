@@ -1,8 +1,8 @@
 export class Enchere {
     key?: string;
     nUniqueEnchere : number;
-    dateLancementEnchere : Date;
-    dateClotureEnchere : Date;
+    dateLancementEnchere : string;
+    dateClotureEnchere : string;
     quantiteProduit : number;
     nAuteurEnchere : number;
     typeAuteurEnchere : string;

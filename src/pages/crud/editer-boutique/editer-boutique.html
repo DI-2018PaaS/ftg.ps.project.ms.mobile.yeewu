@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Editer Boutique
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content text-center padding id="page70">
+  <div class="logo">
+        <img src="assets/img/logo_yeewu.png"/>
+    </div>
+  <form id="ed-boutique-form2">
+    <ion-list id="ed-boutique-list2">
+      <ion-item id="ed-boutique-input3">
+        <ion-label>
+          Reference
+        </ion-label>
+        <ion-input type="text" placeholder=""></ion-input>
+      </ion-item>
+      <ion-item id="ed-boutique-input4">
+        <ion-label>
+         Adresse
+        </ion-label>
+        <ion-input type="text" placeholder=""></ion-input>
+      </ion-item>
+	  <ion-item id="ed-boutique-input5">
+        <ion-label>
+         Description
+        </ion-label>
+        <ion-input type="text" placeholder=""></ion-input>
+      </ion-item>
+	  <ion-item id="ed-boutique-input6">
+		Proprietaire
+		<ion-select>
+		  <ion-option>Pierre Tall (Fournisseur)</ion-option>
+		  <ion-option>Fatou Samb (Fournisseur)</ion-option>
+		  <ion-option>Assane Diop (Fournisseur)</ion-option>
+		  <ion-option>Mame Thiam (Fournisseur)</ion-option>
+		</ion-select>
+	  </ion-item>
+    </ion-list>
+    <button id="ed-boutique-button7" ion-button color="stable" block on-click="goToboutiqueOK()">
+      Creer boutique
+    </button>
+  </form>
+</ion-content>

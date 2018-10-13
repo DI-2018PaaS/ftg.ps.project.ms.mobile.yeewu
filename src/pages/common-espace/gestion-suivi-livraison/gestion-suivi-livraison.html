@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Gestion Suivi Livraison</ion-title>
+    <ion-buttons end> 
+      <button ion-button icon-only light color="shadowlite" (click)="goToSearch()">
+        <ion-icon ios="ios-search" md="md-search">
+        </ion-icon>
+      </button> 
+      <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="goToConnexion()">
+        <ion-icon ios="ios-contact" md="md-contact">
+        </ion-icon>
+      </button> 
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page30">
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-start clear small icon-only item-left clear>
+          <ion-icon name="arrow-dropdown-circle"></ion-icon>
+        <ion-select>
+              <ion-option (ionSelect)="goToEditerOperation()">Editer Operation</ion-option>
+              <ion-option (ionSelect)="goToEditerRole()">Editer Role</ion-option>
+              <ion-option (ionSelect)="goToEditerActivit()">Editer Activité</ion-option>
+              <ion-option (ionSelect)="goToEditerDomaine()">Editer Domaine</ion-option>
+            </ion-select>
+      </button>
+    </ion-col>
+    <ion-col>
+        <button ion-button icon-start clear small icon-only item-right clear color="button-color" (click)="goToFiltrer()"> <ion-icon name="ios-funnel"></ion-icon>
+        </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button ion-button icon-start clear small icon-only clear color="button-color" (click)="goToTrier()">
+              <ion-icon name="md-options" style="margin-right:6px"></ion-icon> {{"Sort"}}
+            </button> 
+    </ion-col>
+</ion-row>
+  <ion-list>
+    <ion-item >
+        #Code   #Livraison
+        <button ion-button item-end icon-start on-click="goToDetailLivraison()">
+          <ion-icon name="ios-copy-outline"></ion-icon>
+        </button>
+          <button ion-button item-end icon-start>
+              <ion-icon name="ios-trash-outline"></ion-icon>
+            </button>
+      </ion-item>
+    <ion-item>
+      #codeID #LivraisonID
+      <button ion-button clear item-end icon-start item-right on-click="goToDetailLivraison()">
+        <ion-icon name="ios-copy-outline" item-right></ion-icon>
+      </button>
+        <button ion-button clear item-end icon-start>
+            <ion-icon name="ios-trash-outline" item-right></ion-icon>
+          </button>
+    </ion-item>
+    <ion-item>
+      #codeID #LivraisonID
+        <button ion-button clear item-end icon-start  item-right on-click="goToDetailLivraison()">
+          <ion-icon name="ios-copy-outline"></ion-icon>
+        </button>
+        
+          <button ion-button clear item-end icon-start>
+              <ion-icon name="ios-trash-outline" item-right></ion-icon>
+            </button>
+      </ion-item>
+      <ion-item>
+          #codeID #LivraisonID
+          <button ion-button clear item-end icon-start  item-right on-click="goToDetailLivraison()">
+            <ion-icon name="ios-copy-outline"></ion-icon>
+          </button>
+         
+            <button ion-button clear item-end icon-start item-right>
+                <ion-icon name="ios-trash-outline"></ion-icon>
+              </button>
+        </ion-item>
+        <ion-item>
+          #codeID #LivraisonID
+            <button ion-button clear item-end icon-start  item-right on-click="goToDetailLivraison()">
+              <ion-icon name="ios-copy-outline"></ion-icon>
+            </button>
+            
+              <button ion-button clear item-end icon-start item-right>
+                  <ion-icon name="ios-trash-outline"></ion-icon>
+                </button>
+          </ion-item>
+          <ion-item>
+            #codeID #LivraisonID
+              <button ion-button clear item-end icon-start  item-right on-click="goToDetailLivraison()">
+                <ion-icon name="ios-copy-outline" item-right></ion-icon>
+              </button>
+             
+                <button ion-button clear item-end icon-start item-right>
+                    <ion-icon name="ios-trash-outline"></ion-icon>
+                  </button>
+            </ion-item>
+      </ion-list>
+</ion-content>

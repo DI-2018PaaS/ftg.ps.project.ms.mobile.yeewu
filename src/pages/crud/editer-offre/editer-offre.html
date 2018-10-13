@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Editer Offre
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content text-center padding id="page64">
+  <div class="logo">
+        <img src="assets/img/logo_yeewu.png"/>
+    </div>
+  <form id="ed-offre-form2">
+    <ion-list id="ed-offre-list2">
+      <ion-item id="ed-offre-input3">
+        <ion-label>
+          Code Offre
+        </ion-label>
+        <ion-input type="text" placeholder=""></ion-input>
+      </ion-item>
+      <ion-item id="ed-offre-input4">
+        <ion-label>
+         dateLancement
+        </ion-label>
+        <ion-input type="text" placeholder=""></ion-input>
+      </ion-item>
+	   <ion-item id="ed-offre-input5">
+        <ion-label>
+         dateClotureOffre
+        </ion-label>
+        <ion-input type="text" placeholder=""></ion-input>
+      </ion-item>
+	   <ion-item id="ed-offre-input6">
+        <ion-label>
+         quantiteProduit
+        </ion-label>
+        <ion-input type="text" placeholder=""></ion-input>
+      </ion-item>
+	   <ion-item id="ed-offre-input7">
+        <ion-label>
+         Auteur Offre
+        </ion-label>
+        <ion-input type="text" placeholder=""></ion-input>
+      </ion-item>
+	  <ion-item id="ed-offre-input9">
+	  <ion-select name="Type Auteur">
+        <ion-option>
+          Animateur
+        </ion-option>
+        <ion-option>
+          Fournisseur
+        </ion-option>
+        <ion-option>
+          Client
+        </ion-option>
+        <ion-option>
+          Administrateur
+        </ion-option>
+      </ion-select>
+	  </ion-item>
+	  <ion-item id="ed-offre-input10">
+	  <ion-select name="Activite">
+        <ion-option>
+          Act Peche
+        </ion-option>
+        <ion-option>
+          Act Agriculture
+        </ion-option>
+        <ion-option>
+          Act Eleveur
+        </ion-option>
+        <ion-option>
+          Act Artisanat
+        </ion-option>
+      </ion-select>
+	  </ion-item>
+	  <ion-item id="ed-offre-input11">
+	  <ion-select name="Type Article">
+        <ion-option>
+          Pelle
+        </ion-option>
+        <ion-option>
+          Engrais
+        </ion-option>
+        <ion-option>
+          Composte
+        </ion-option>
+        <ion-option>
+          Arrosoir
+        </ion-option>
+      </ion-select>
+	  </ion-item>
+	  <ion-item id="ed-offre-input8">
+        <ion-label>
+         Contrat Num#
+        </ion-label>
+        <ion-input type="text" placeholder=""></ion-input>
+      </ion-item>
+    </ion-list>
+    <button id="ed-offre-button7" ion-button color="stable" block on-click="goToTypeActeurOK()">
+      Editer Offre
+    </button>
+  </form>
+</ion-content>

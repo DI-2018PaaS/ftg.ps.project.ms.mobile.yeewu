@@ -1,0 +1,100 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Home</ion-title>
+      <ion-buttons end> 
+        <button ion-button icon-only light color="shadowlite" (click)="goToSearch()">
+          <ion-icon ios="ios-search" md="md-search">
+          </ion-icon>
+        </button> 
+        <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="goToConnexion()">
+          <ion-icon ios="ios-contact" md="md-contact">
+          </ion-icon>
+        </button> 
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+<ion-content class="home-domaine-id">
+    <div *ngIf="datas" class="home-datas">
+        <ion-slides pager="true" loop="true" autoplay="5800">
+            <ion-slide *ngFor='let value of datas'> <img src="{{value.image}}"> </ion-slide>
+        </ion-slides>
+    </div>
+    <div class="segment">
+        <ion-segment [(ngModel)]="segment" color="blue">
+            <ion-segment-button tappable>
+                <ion-label>Boutique</ion-label>
+            </ion-segment-button>
+            <ion-segment-button tappable>
+                <ion-label>Encheres </ion-label>
+            </ion-segment-button>
+            <ion-segment-button tappable>
+                <ion-label>Offres</ion-label>
+            </ion-segment-button>
+			<ion-segment-button tappable>
+                <ion-label>Rating</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+	<div class="category-class">
+        <!--ion-spinner name="crescent"> </ion-spinner-->
+        <div class="main-categories">
+            <ion-row class="row unlimited-items">
+                <ion-col class="col">
+                    <!--a (click)="getCategory(item.id, item.slug, item.name)"-->
+					<a (click)="goToActivite()">
+                        <ion-card>
+                            <ion-card-content> 
+                                <img src="assets/img/logo-1.png"/> 
+                            </ion-card-content>
+                            <div text-center>
+                                <ion-label  > Activite A </ion-label>
+                            </div>
+                        </ion-card>
+                    </a>
+                </ion-col>
+				<ion-col class="col">
+                    <a (click)="goToActivite()">
+                        <ion-card>
+                            <ion-card-content> 
+                                <img src="assets/img/logo-2.png"/>
+                            </ion-card-content>
+                            <div text-center>
+                                <ion-label color="primary" > Activite B </ion-label>
+                            </div>
+                        </ion-card>
+                    </a>
+                </ion-col>
+            </ion-row>
+            <ion-row class="row unlimited-items">
+                    <ion-col class="col">
+                        <!--a (click)="getCategory(item.id, item.slug, item.name)"-->
+                        <a (click)="goToActivite()">
+                            <ion-card>
+                                <ion-card-content> 
+                                    <img src="assets/img/logo-3.png"/> 
+                                </ion-card-content>
+                                <div text-center>
+                                    <ion-label  > Activite C </ion-label>
+                                </div>
+                            </ion-card>
+                        </a>
+                    </ion-col>
+                    <ion-col class="col">
+                        <a (click)="goToActivite()">
+                            <ion-card>
+                                <ion-card-content> 
+                                    <img src="assets/img/logo-4.png"/>
+                                </ion-card-content>
+                                <div text-center>
+                                    <ion-label color="primary" > Activite D </ion-label>
+                                </div>
+                            </ion-card>
+                        </a>
+                    </ion-col>
+                </ion-row>
+        </div>
+    </div>
+</ion-content>

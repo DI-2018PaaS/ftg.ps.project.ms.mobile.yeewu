@@ -1,6 +1,4 @@
 //////////////////////////////////////////////////
-// BLUE LIGHT THEME
-
 //  Font Style
 //  Font sizes
 //  Global Colors
@@ -65,7 +63,7 @@ $text-font-size: 12px;
 ================================================*/
 $palettes: (
     mainColors: ( // Also used for backgrounds.
-        primary:   #DC0030, // Used for toolbars
+        primary:   rgb(15, 15, 15), // Used for toolbars
         secondary:  #f7f7f7, // Used for various small elements
         secondary-first:  #9A3838, // Used for gradient
         accent:   #ffffff, //Used for icon-search-bar, loaders-spinners, checkbox-item, icon, button, span, input-field-icons
@@ -163,7 +161,7 @@ $color-2: theme-colors('mainColors', 'secondary-first');
       background-color: transparent;
     }
   }
-
+  
   ion-navbar {
     background-color: transparent;
     animation-name: headerOff;

@@ -1,0 +1,12 @@
+<ion-content>
+  <ion-slides pager="true">
+    <ion-slide *ngFor="let slide of slider">
+      <ion-toolbar>
+          <ion-buttons end>
+            <button ion-button color="primary" on-click="goToHomeDomainePage()">Skip</button>>
+          </ion-buttons>
+      </ion-toolbar>
+        <img [src]="slide.image">
+    </ion-slide>
+  </ion-slides>
+</ion-content>

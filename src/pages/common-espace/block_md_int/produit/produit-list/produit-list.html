@@ -1,0 +1,46 @@
+<!--
+  Generated template for the ProduitListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+<ion-buttons start>
+  <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+  </button>
+</ion-buttons>
+
+  <ion-navbar color="primary">
+    <ion-title>Liste des produits</ion-title>
+    <ion-buttons end> 
+      <button ion-buttton ion-icon (click)='addNewProduit()'> 
+      <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<!-- <ion-item *ngFor="let produit of produits"  (click)="editProduit(produit)" >
+ -->
+  <ion-item *ngFor="let produit of produits" >
+
+
+    <ion-card>
+     
+      <div class="card-title">{{produit.code}}</div>
+      <div class="card-subtitle">{{produit.designation}}</div>
+      <div class="card-subtitle">{{produit.description}}</div>
+      <div class="card-subtitle">{{produit.prixUnitaire}}</div>
+    
+<ion-buttons end>
+<button ion-buttton ion-icon (click)="editProduit(produit)"><ion-icon name="ios-create"></ion-icon></button>
+<button ion-buttton ion-icon (click)='deleteProduit(produit.key)'><ion-icon name="ios-trash"></ion-icon></button>
+</ion-buttons>
+</ion-card>
+</ion-item>
+</ion-content>

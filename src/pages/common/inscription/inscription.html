@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Inscription
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content text-center padding id="page7">
+  <div class="logo">
+        <img src="assets/img/logo_yeewu.png"/>
+    </div>
+  <form id="inscription-form2">
+    <ion-list id="inscription-list2">
+       <ion-item id="inscription-input3">
+        <ion-label>
+          Utilisateur Code
+        </ion-label>
+        <ion-input type="text" placeholder=""></ion-input>
+      </ion-item>
+	   <ion-item id="inscription-input4">
+        <ion-label>
+          Utilisateur
+        </ion-label>
+        <ion-input type="text" placeholder=""></ion-input>
+      </ion-item>
+	  <ion-item id="inscription-input5">
+        <ion-label>
+          Nom
+        </ion-label>
+        <ion-input type="text" placeholder=""></ion-input>
+      </ion-item>
+	  <ion-item id="inscription-input6">
+        <ion-label>
+          Prenoms
+        </ion-label>
+        <ion-input type="text" placeholder=""></ion-input>
+      </ion-item>
+      <ion-item id="inscription-input7">
+        <ion-label>
+          Email
+        </ion-label>
+        <ion-input type="email" placeholder=""></ion-input>
+      </ion-item>
+	  <ion-item id="inscription-input8">
+        <ion-label>
+          Telephone
+        </ion-label>
+        <ion-input type="email" placeholder=""></ion-input>
+      </ion-item>
+      <ion-item id="inscription-input9">
+        <ion-label>
+          Mot de Passe
+        </ion-label>
+        <ion-input type="password" placeholder=""></ion-input>
+      </ion-item>
+    </ion-list>
+	<!--ion-item *ngIf="data != null">
+		<ion-label>{{data.title}}</ion-label>
+		<ion-select [(ngModel)]="data.selectedItem" multiple="true" interface="action-sheet" name="first">
+			<ion-option *ngFor="let item of data.items; let i= index" [value]="item.id">{{item.title}}</ion-option>
+		</ion-select>
+	</ion-item-->
+	<ion-item>
+  <ion-label>Choix Role</ion-label>
+  <ion-select [(ngModel)]="toppings" multiple="true" name="Client">
+    <ion-option>Animateur</ion-option>
+    <ion-option>Administrateur</ion-option>
+    <ion-option>Fournisseur</ion-option>
+    <ion-option>Client</ion-option>
+  </ion-select>
+</ion-item>
+    <button id="inscription-button7" ion-button color="stable" block on-click="goToInscriptionOK()">
+      Inscription
+    </button>
+  </form>
+</ion-content>
