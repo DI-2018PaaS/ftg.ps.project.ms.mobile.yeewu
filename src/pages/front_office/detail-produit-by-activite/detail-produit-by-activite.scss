@@ -1,0 +1,108 @@
+page-detail-produit-by-activite {
+
+    ion-slide.swiper-slide {
+        left: 25%;
+    }
+    
+    .slide-zoom {
+        background: #ffffff;
+    }
+ 
+    .thumb-img {
+        padding: 10px;
+    }
+
+    ionic3-star-rating{font-size:10px !important;}
+    ion-icon {
+     font-size: 17px; //Preferred size here
+    
+ }
+ 
+ .ionic3-star-rating[_ngcontent-c0] .button[_ngcontent-c0] ion-icon[_ngcontent-c0] {
+     font-size: 15px;
+     
+ }
+ button{
+     font-size: 10px;
+ }
+
+ .card {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 6px;
+    margin-top: 6px;
+    ion-item {
+        .name {
+            width: calc(100% - 90px);
+            display: inline-block;
+            h2 {
+                font-size: 1.3rem;
+                font-weight: 600;
+                ion-icon {
+                    margin-left: 5px;
+                }
+            }
+        }
+        p {
+            font-size: 1.1rem;
+            color: #777;
+            font-weight: 400;
+        }
+    }
+}
+ion-card-content {
+    padding-left: 30px !important;
+    position: relative;
+    .ride-detail {
+        position: relative;
+        margin-bottom: 1rem;
+        h6 {
+            margin: 1.5rem 0 .5rem;
+            color: #1573A7;
+            padding-left: 45px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            padding-left: 10px;
+            position: relative;
+            color: #252525;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            padding-left: 45px;
+            small {
+                display: block;
+                width: 100%;
+                margin-top: 18px;
+                margin-bottom: 3px;
+                font-size: 1.1rem;
+                color: #9E9E9E;
+                ion-icon {
+                    float: right;
+                    font-size: 1.3rem;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    .seats-tag {
+        padding: 12px;
+        display: flex;
+        border: 1px solid #1573A7;
+        border-radius: 10px;
+        color: #1573A7;
+        align-items: center;
+        ion-icon {
+            font-size: 2rem;
+        }
+        strong {
+            margin: auto;
+            color: #000;
+        }
+    }
+}
+
+}

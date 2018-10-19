@@ -1,8 +1,69 @@
 <ion-header>
+        
   <ion-navbar>
+        <ion-buttons end> 
+        <button ion-button  (click)="showPanier()">
+                <ion-icon name="ios-cart" ></ion-icon>
+            </button>
+            </ion-buttons>
     <ion-title>
       Activite
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page16"></ion-content>
+<ion-content padding id="page16">
+
+
+
+  <div class="category-class">
+      <ion-list *ngFor="let produit of produits" >
+
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img src="assets/img/tracteur1.jpg">
+            </ion-thumbnail>
+           
+            <h4 >{{produit.designation}}</h4>
+            <p> {{produit.prixUnitaire}}</p>
+            <p> {{produit.descriptionProduit}}</p>
+            
+          <!-- </ion-item>
+          <ion-item> -->
+                <ion-buttons>
+                        <button ion-button clear small color="danger" >
+                            <ion-icon name="thumbs-up"></ion-icon>
+                        </button>             
+                      
+                        <button ion-button clear small color="danger" >
+                            <ion-icon name="thumbs-down"></ion-icon>
+                        </button>
+                    </ion-buttons>
+                    
+                    <ion-buttons>
+                        <button ion-button clear   color="danger" >
+                            <ionic3-star-rating    color="danger" 
+                            activeIcon = "ios-star"
+                            defaultIcon = "ios-star-outline"
+                            activeColor = "#f53d3d" 
+                            defaultColor = "#f4f4f4"
+                            [minlength]=5
+                            readonly="false"
+                            readonly="false"
+                            [rating]="5">
+                        </ionic3-star-rating>
+                        </button>
+                    </ion-buttons>
+                    <ion-buttons end> 
+                            <button ion-button  clear (click)="goToDetailProduit(produit)" >Detail</button>
+                            <button ion-button clear  (click)="addOnPanier(produit)" ><ion-icon name="ios-cart-outline"></ion-icon></button>
+                     </ion-buttons>
+
+          </ion-item>
+      </ion-list>
+
+    
+
+    
+  </div>
+
+</ion-content>

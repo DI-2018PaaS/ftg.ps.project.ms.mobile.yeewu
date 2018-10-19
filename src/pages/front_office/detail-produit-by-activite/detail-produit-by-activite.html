@@ -1,0 +1,78 @@
+<!--
+  Generated template for the DetailProduitByActivitePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+  <ion-buttons end> 
+    <button ion-button  (click)="showPanier()">
+            <ion-icon name="ios-cart"></ion-icon>
+        </button>
+        </ion-buttons>
+  
+    <ion-title>Detail Produit</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+
+
+  <ion-card>
+
+    <img src="assets/img/tracteur1.jpg" />
+    <ion-slides class="image-slider" loop="true"  slidesPerView="2">
+      <ion-slide *ngFor="let img of images">
+        <img src="assets/img/{{img}}" class="thumb-img" imageViewer/>
+      </ion-slide>
+
+    </ion-slides>
+    <ion-card-content>
+      <ion-card-title>
+        {{produit.designation}}
+      </ion-card-title>
+      <p>
+          Lorem Ipsum est simplement un texte factice
+           de l'industrie de l'impression et de la composition. 
+           Lorem Ipsum est le texte factice standard de l’industrie
+            depuis les années 1500, quand un imprimeur inconnu a pris 
+            une galère de type et l’a brouillé pour en faire un cahier type.
+      </p>
+    </ion-card-content>
+
+   
+     <div float-left>
+        
+            <ion-icon name="add-circle"></ion-icon>
+            <strong>1 </strong>
+            <ion-icon name="remove-circle" ></ion-icon>
+    
+     </div>
+
+        <ion-buttons end> 
+            <button ion-button float-right>
+                    <ion-icon name="ios-cart" (click)="showPanier()" ></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-buttons start>
+            <button ion-button clear   color="danger" >
+                <ionic3-star-rating    color="danger" 
+                activeIcon = "ios-star"
+                defaultIcon = "ios-star-outline"
+                activeColor = "#f53d3d" 
+                defaultColor = "#f4f4f4"
+                [minlength]=5
+                readonly="false"
+                readonly="false"
+                [rating]="5"> 
+            </ionic3-star-rating>
+            </button>
+        </ion-buttons>
+         
+  </ion-card>
+
+</ion-content>

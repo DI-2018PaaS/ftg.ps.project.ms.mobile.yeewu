@@ -21,7 +21,7 @@ import { DetailEncherePage } from '../../common-espace/detail-enchere/detail-enc
 import { GestionSuiviNotationsPage } from '../../common-espace/gestion-suivi-notations/gestion-suivi-notations';
 import { DetailNotationPage } from '../../common-espace/detail-notation/detail-notation';
 import { ViewComptePage } from '../../crud/view-compte/view-compte';
-import { TabsPage } from '../block_md_int/tabs/tabs';
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-fournisseur-suivi',

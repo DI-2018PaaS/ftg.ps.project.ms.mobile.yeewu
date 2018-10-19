@@ -1,3 +1,5 @@
+import { PanierPage } from './../pages/common/panier/panier';
+import { DetailProduitByActivitePage } from './../pages/front_office/detail-produit-by-activite/detail-produit-by-activite';
 import { NgModule, ErrorHandler,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -127,37 +129,40 @@ import { DomainePage } from '../pages/front_office/domaine/domaine';
 import { ActivitePage } from '../pages/front_office/activite/activite';
 
 // Integration part MD
-import { MenuPageModule } from './../pages/fournisseur_space/block_md_int/menu/menu.module';
+import { MenuPageModule } from './../pages/fournisseur_space/menu/menu.module';
 
-import { DetailProduitPage } from './../pages/common-espace/block_md_int/produit/detail-produit/detail-produit';
-import { ProduitEditPage } from './../pages/common-espace/block_md_int/produit/produit-edit/produit-edit';
-import { ProduitListPage } from './../pages/common-espace/block_md_int/produit/produit-list/produit-list';
-import { ProduitCreatePage } from '../pages/common-espace/block_md_int/produit/produit-create/produit-create';
+import { DetailProduitPage } from './../pages/common-espace/produit/detail-produit/detail-produit';
+import { ProduitEditPage } from './../pages/common-espace/produit/produit-edit/produit-edit';
+import { ProduitListPage } from './../pages/common-espace/produit/produit-list/produit-list';
+import { ProduitCreatePage } from '../pages/common-espace/produit/produit-create/produit-create';
 //import {  } from '../block_md_int/tabs/tabs';
 
-import { ProduitProvider } from './../providers/msmagasindomains/block_md_int/produit/produit';
+import { ProduitProvider } from './../providers/msmagasindomains/produit/produit';
 import { HttpClientModule } from '@angular/common/http';
 import { FIREBASE_CREDENTIALS } from './firebase.credentials';
-import { MagasinProvider } from '../providers/msmagasindomains/block_md_int/magasin/magasin';
-import { FournisseurProvider } from '../providers/msmagasindomains/block_md_int/fournisseur/fournisseur';
-import { BoutiqueProvider } from '../providers/msmagasindomains/block_md_int/boutique/boutique';
-import { BonCommandeProvider } from '../providers/msmagasindomains/block_md_int/bon-de-commande/bon-de-commande';
-import { CreateMagasinPage } from '../pages/common-espace/block_md_int/magasin/create-magasin/create-magasin';
-import { EditMagasinPage } from '../pages/common-espace/block_md_int/magasin/edit-magasin/edit-magasin';
-import { DetailMagasinPage } from '../pages/common-espace/block_md_int/magasin/detail-magasin/detail-magasin';
-import { ListMagasinPage } from '../pages/common-espace/block_md_int/magasin/list-magasin/list-magasin';
-import { CreateFournisseurPage } from '../pages/fournisseur_space/block_md_int/fournisseur/create-fournisseur/create-fournisseur';
-import { EditFournisseurPage } from '../pages/fournisseur_space/block_md_int/fournisseur/edit-fournisseur/edit-fournisseur';
-import { DetailFournisseurPage } from '../pages/fournisseur_space/block_md_int/fournisseur/detail-fournisseur/detail-fournisseur';
-import { ListFournisseurPage } from '../pages/fournisseur_space/block_md_int/fournisseur/list-fournisseur/list-fournisseur';
-import { CreateBoutiquePage } from '../pages/common-espace/block_md_int/boutique/create-boutique/create-boutique';
-import { EditBoutiquePage } from '../pages/common-espace/block_md_int/boutique/edit-boutique/edit-boutique';
-import { DetailBoutiquePage } from '../pages/common-espace/block_md_int/boutique/detail-boutique/detail-boutique';
-import { ListBoutiquePage } from '../pages/common-espace/block_md_int/boutique/list-boutique/list-boutique';
-import { CreatebonDeCommandePage } from '../pages/common-espace/block_md_int/bonDeCommande/createbon-de-commande/createbon-de-commande';
-import { EditbonDeCommandePage } from '../pages/common-espace/block_md_int/bonDeCommande/editbon-de-commande/editbon-de-commande';
-import { DetailbonDeCommandePage } from '../pages/common-espace/block_md_int/bonDeCommande/detailbon-de-commande/detailbon-de-commande';
-import { ListbonDeCommandePage } from '../pages/common-espace/block_md_int/bonDeCommande/listbon-de-commande/listbon-de-commande';
+import { MagasinProvider } from '../providers/msmagasindomains/magasin/magasin';
+import { FournisseurProvider } from '../providers/msmagasindomains/fournisseur/fournisseur';
+import { BoutiqueProvider } from '../providers/msmagasindomains//boutique/boutique';
+//import { BonCommandeProvider } from '../providers/msmagasindomains/block_md_int/bon-de-commande/bon-de-commande';
+import { CreateMagasinPage } from '../pages/common-espace/magasin/create-magasin/create-magasin';
+import { EditMagasinPage } from '../pages/common-espace/magasin/edit-magasin/edit-magasin';
+import { DetailMagasinPage } from '../pages/common-espace/magasin/detail-magasin/detail-magasin';
+import { ListMagasinPage } from '../pages/common-espace/magasin/list-magasin/list-magasin';
+import { CreateFournisseurPage } from '../pages/fournisseur_space/fournisseur/create-fournisseur/create-fournisseur';
+import { EditFournisseurPage } from '../pages/fournisseur_space/fournisseur/edit-fournisseur/edit-fournisseur';
+import { DetailFournisseurPage } from '../pages/fournisseur_space/fournisseur/detail-fournisseur/detail-fournisseur';
+import { ListFournisseurPage } from '../pages/fournisseur_space/fournisseur/list-fournisseur/list-fournisseur';
+import { CreateBoutiquePage } from '../pages/common-espace/boutique/create-boutique/create-boutique';
+import { EditBoutiquePage } from '../pages/common-espace/boutique/edit-boutique/edit-boutique';
+import { DetailBoutiquePage } from '../pages/common-espace/boutique/detail-boutique/detail-boutique';
+import { ListBoutiquePage } from '../pages/common-espace/boutique/list-boutique/list-boutique';
+import { IonicImageViewerModule } from 'ionic-img-viewer';
+
+// import { CreatebonDeCommandePage } from '../pages/common-espace/block_md_int/bonDeCommande/createbon-de-commande/createbon-de-commande';
+// import { EditbonDeCommandePage } from '../pages/common-espace/block_md_int/bonDeCommande/editbon-de-commande/editbon-de-commande';
+// import { DetailbonDeCommandePage } from '../pages/common-espace/block_md_int/bonDeCommande/detailbon-de-commande/detailbon-de-commande';
+// import { ListbonDeCommandePage } from '../pages/common-espace/block_md_int/bonDeCommande/listbon-de-commande/listbon-de-commande';
+import { StarRatingModule } from 'ionic3-star-rating';
 // Integration part MD end
 
 //import { ItemDetailsPageLogin } from '../pages/item-details-login/item-details-login';
@@ -177,7 +182,7 @@ import { HttpModule } from '@angular/http';
 //
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { TabsPage } from '../pages/fournisseur_space/block_md_int/tabs/tabs';
+import { TabsPage } from '../pages/fournisseur_space/tabs/tabs';
 //
 
 @NgModule({
@@ -303,10 +308,12 @@ import { TabsPage } from '../pages/fournisseur_space/block_md_int/tabs/tabs';
     EditBoutiquePage,
     DetailBoutiquePage,
     ListBoutiquePage,
-    CreatebonDeCommandePage,
-    EditbonDeCommandePage,
-    DetailbonDeCommandePage,
-    ListbonDeCommandePage,
+    DetailProduitByActivitePage,
+    PanierPage,
+    // CreatebonDeCommandePage,
+    // EditbonDeCommandePage,
+    // DetailbonDeCommandePage,
+    // ListbonDeCommandePage,
     TabsPage
     //, ItemDetailsPageLogin
   ],
@@ -318,7 +325,10 @@ import { TabsPage } from '../pages/fournisseur_space/block_md_int/tabs/tabs';
     IonicModule.forRoot(MyApp),
     CalendarModule,
     MenuPageModule,
-    HttpClientModule
+    HttpClientModule,
+    StarRatingModule,
+    IonicImageViewerModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -443,10 +453,12 @@ import { TabsPage } from '../pages/fournisseur_space/block_md_int/tabs/tabs';
     EditBoutiquePage,
     DetailBoutiquePage,
     ListBoutiquePage,
-    CreatebonDeCommandePage,
-    EditbonDeCommandePage,
-    DetailbonDeCommandePage,
-    ListbonDeCommandePage,
+    DetailProduitByActivitePage,
+    PanierPage,
+    // CreatebonDeCommandePage,
+    // EditbonDeCommandePage,
+    // DetailbonDeCommandePage,
+    // ListbonDeCommandePage,
     TabsPage
     //,ItemDetailsPageLogin
   ],
@@ -459,7 +471,7 @@ import { TabsPage } from '../pages/fournisseur_space/block_md_int/tabs/tabs';
     MagasinProvider,
     FournisseurProvider,
     BoutiqueProvider,
-    BonCommandeProvider
+  //  BonCommandeProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
