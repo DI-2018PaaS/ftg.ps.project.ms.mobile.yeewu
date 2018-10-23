@@ -1,0 +1,24 @@
+<!--
+  Generated template for the DetailTypeActeurPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+  <ion-navbar color="primary">
+    <ion-title>details TypeActeur</ion-title>
+  </ion-navbar>
+</ion-header>
+  <ion-content padding><div><form>
+      <h3>{{typeacteur.idActeurType}}</h3>
+      <h3>{{typeacteur.libelleActeur}}</h3>
+  <ion-buttons end>
+  <button ion-buttton ion-icon (click)='deleteTypeActeur(typeacteur.key)'><ion-icon name="ios-trash"></ion-icon></button>
+  <button ion-buttton ion-icon (click)='editTypeActeur()'> <ion-icon name="ios-create"></ion-icon></button>
+  </ion-buttons>
+</form></div></ion-content>

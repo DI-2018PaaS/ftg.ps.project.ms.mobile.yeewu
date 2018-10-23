@@ -20,7 +20,7 @@ export class ParallaxService implements IService {
             { "title": "Friends", "theme": "layout1" },
             { "title": "Product", "theme": "layout2" },
             { "title": "Basic", "theme": "layout3" },
-            { "title": "Location Details", "theme": "layout4" }
+            { "title": "Enchere", "theme": "layout4" }
 
         ];
     };

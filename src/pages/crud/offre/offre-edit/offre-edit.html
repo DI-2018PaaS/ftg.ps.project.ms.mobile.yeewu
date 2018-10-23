@@ -1,0 +1,30 @@
+<!--
+  Generated template for the OffreEditPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+  <ion-navbar color="primary">
+    <ion-title>Editer Offre</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding><div><form>
+<ion-input type='text' required placeholder="ID" [(ngModel)]="offreNew.nUniqueOffre"></ion-input>
+ <ion-input type='text' required placeholder="Lancement" [(ngModel)]="offreNew.dateLancement"></ion-input>
+ <ion-input type='text' required placeholder="Cloture" [(ngModel)]="offreNew.dateClotureOffre"></ion-input>
+ <ion-input type='text' required placeholder="Quantite" [(ngModel)]="offreNew.quantiteProduit"> </ion-input>
+ <ion-input type='text' required placeholder="Auteur" [(ngModel)]="offreNew.nAuteurOffre"></ion-input>
+ <ion-input type='text' required placeholder="Type Auteur" [(ngModel)]="offreNew.typeAuteurOffre"></ion-input>
+ <ion-input type='text' required placeholder="Activité" [(ngModel)]="offreNew.activityID"></ion-input>
+ <ion-input type='text' required placeholder="Type Article" [(ngModel)]="offreNew.typeArticle"> </ion-input>
+ <ion-input type='text' required placeholder="Contrat" [(ngModel)]="offreNew.contratId"> </ion-input>
+    <ion-buttons end>
+    <button ion-button block (click)="updateOffre()">valider</button>
+  </ion-buttons>
+</form></div></ion-content>

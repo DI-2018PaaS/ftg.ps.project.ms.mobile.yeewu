@@ -3,6 +3,56 @@
     <ion-title>
       Enchere
     </ion-title>
+    <ion-buttons end> 
+        <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="goToConnexion()">
+          <ion-icon ios="ios-contact" md="md-contact">
+          </ion-icon>
+        </button> 
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page7"></ion-content>
+<ion-content id="enchere-id">
+<h1 ion-text color="mauve">No# Enchere</h1>
+<div class="slides-encheres">
+    <ion-card>
+    <ion-slides class="image-slider" loop="true" slidesPerView="2">
+        <ion-slide *ngFor="let img of enchere_imgs"> 
+            <img src="assets/img/{{img}}" class="thumb-img" imageViewer>
+        </ion-slide>
+    </ion-slides>
+  </ion-card>
+</div>
+<ion-card>
+<div class="details-enchere">
+  <h2>Nom du Produit</h2>
+  <h2 ion-text color="orange">Valeur Courante: 25000 XOF</h2>
+  <!--h3>Rating</h3-->
+  <!--rating [(ngModel)]="rate" readonly="false" 
+      small="true"
+      (ngModelChange)="onModelChange($event)">
+</rating-->
+<span class="rating review-star">
+  <span class="star-icon" [ngClass]="{full: 4 >= 1, half: 3 == 0.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 5 >= 2, half: 2 == 1.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 3 >= 3, half: 2 == 2.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 5 >= 4, half: 2 == 3.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 3 >= 5, half: 4.5 == 4.5}">&#x2605;</span>
+  </span>
+  <div><p>Emetteur: Fournisseur A</p></div>
+  <div><p>Votre Offre: 12500 XOF</p><ion-icon name="trending-up" color="favorite"></ion-icon> <ion-icon name="person" color="favorite"></ion-icon><p>Nom Prenom</p></div>
+  <div><p>Temps restant</p>
+    <p>Rating</p></div>
+</div>
+<div class="enchere-raise-input">
+    <form id="raise-form">
+      <ion-list id="raise-list1">
+        <ion-item id="login-input1">
+          <ion-input [(ngModel)]="eltModel.prixDepart" name="first"></ion-input>
+        </ion-item>
+      </ion-list>
+    </form>
+    </div>
+    <button ion-button icon-only light class="has-icon icon-only has-badge">Encherir
+      </button> 
+</ion-card>
+<div class="notations-encheres">
+</div>
+<div class="encheres-similaires">
+</div>
+</ion-content>

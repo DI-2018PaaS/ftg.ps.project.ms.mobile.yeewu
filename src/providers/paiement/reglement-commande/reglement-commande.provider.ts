@@ -11,7 +11,7 @@ import { HttpClient  } from "@angular/common/http";
 */
 @Injectable()
 export class ReglementCommandeProvider {
-  private dbPath = 'firebaseDecl';
+  private dbPath = 'regelements-db';
  
   refReglementCommandeRef: AngularFireList<ReglementCommande> = null;
 

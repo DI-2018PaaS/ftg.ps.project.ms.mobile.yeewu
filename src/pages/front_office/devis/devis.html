@@ -1,12 +1,46 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Devis
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-<ion-content padding id="page10">
-  <button id="devis-button11" ion-button color="positive" block>
-    previsualiser
-  </button>
-</ion-content>
+    <ion-navbar>
+      <ion-title>
+        Devis
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content  id="devis-produit-id">
+          <ion-row>
+             <ion-col>
+               <button ion-button icon-start clear small icon-only item-left clear>
+                   <ion-icon name="arrow-dropdown-circle"></ion-icon>
+                 <ion-select>
+                       <ion-option (ionSelect)="goToEditerOperation()">Editer Operation</ion-option>
+                       <ion-option (ionSelect)="goToEditerRole()">Editer Role</ion-option>
+                       <ion-option (ionSelect)="goToEditerActivit()">Editer Activité</ion-option>
+                       <ion-option (ionSelect)="goToEditerDomaine()">Editer Domaine</ion-option>
+                     </ion-select>
+               </button>
+             </ion-col>
+             <ion-col>
+                 <button ion-button icon-start clear small icon-only item-right clear color="button-color" (click)="goToFiltrer()"> <ion-icon name="ios-funnel"></ion-icon>
+                 </button>
+             </ion-col>
+             <ion-col>
+               <button ion-button ion-button icon-start clear small icon-only clear color="button-color" (click)="goToTrier()">
+                       <ion-icon name="md-options" style="margin-right:6px"></ion-icon> {{"Sort"}}
+                     </button> 
+             </ion-col>
+         </ion-row>
+           <ion-list>
+             <ion-item >
+                 #ID   #Produit #Quantite #Prix
+             </ion-item>
+         <ion-item>
+               #produitID #Produit A <p>V</p><p>1000</p>
+               <button ion-button clear item-end item-end on-click="goToProduitDevis()">
+                 <ion-icon name="ios-copy-outline"  icon-start></ion-icon>
+               </button>
+                 <button ion-button clear item-end >
+                     <ion-icon name="ios-trash-outline" icon-start></ion-icon>
+                   </button>
+             </ion-item>
+               </ion-list>
+          <button ion-button (click)="goToPreview()">Previsualiser</button>
+  </ion-content>

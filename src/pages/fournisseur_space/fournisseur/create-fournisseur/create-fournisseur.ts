@@ -1,8 +1,8 @@
-import { Fournisseur } from './../../../../models/acteur/fournisseur/fournisseur.model';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {FournisseurProvider } from '../../../../providers/acteur/fournisseur/fournisseur.provider';
 import { AngularFireList } from 'angularfire2/database';
+import { Fournisseur } from '../../../../models/acteur/fournisseur/fournisseur.model';
+import { FournisseurProvider } from '../../../../providers/acteur/fournisseur/fournisseur.provider';
 
 /**
  * Generated class for the CreateFournisseurPage page.

@@ -1,12 +1,55 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Rating
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-<ion-content padding id="page2">
-  <button id="rating-button5" ion-button color="positive" block on-click="goToFournisseur()">
-    link
-  </button>
+    <ion-navbar>
+      <ion-title>
+        Rating
+      </ion-title>
+      <ion-buttons end> 
+          <button ion-button icon-only light color="shadowlite" (click)="goToSearch()">
+            <ion-icon ios="ios-search" md="md-search">
+            </ion-icon>
+          </button> 
+          <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="goToConnexion()">
+            <ion-icon ios="ios-contact" md="md-contact">
+            </ion-icon>
+          </button> 
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+<ion-content padding id="rating-id">
+    <ion-row>
+        <ion-col>
+          <button ion-button icon-start clear small icon-only item-left clear>
+            <ion-icon name="logo-buffer"></ion-icon>
+            <ion-select>
+                  <ion-option (ionSelect)="goToEditerDomaine()">Vos Offres</ion-option>
+                  <ion-option (ionSelect)="goToEditerDomaine()">Offres Actifs</ion-option>
+                </ion-select>
+          </button>
+        </ion-col>
+        <ion-col>
+            <button ion-button icon-start clear small icon-only item-right clear color="button-color" (click)="goToFiltrer()"> <ion-icon name="ios-funnel"></ion-icon>
+            </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button ion-button icon-start clear small icon-only clear color="button-color" (click)="goToTrier()">
+                  <ion-icon name="md-options" style="margin-right:6px"></ion-icon> {{"Sort"}}
+                </button> 
+        </ion-col>
+    </ion-row>
+    <div>
+        <ion-segment [(ngModel)]="segment">
+          <ion-segment-button value="boutique">
+            Boutique
+          </ion-segment-button>
+          <ion-segment-button value="offre">
+            Offre
+          </ion-segment-button>
+          <ion-segment-button value="enchere">
+            Offre
+          </ion-segment-button>
+          <ion-segment-button value="rating">
+            Rating
+          </ion-segment-button>
+        </ion-segment>
+      </div>
 </ion-content>

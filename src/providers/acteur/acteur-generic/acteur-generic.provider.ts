@@ -22,88 +22,88 @@ export class ActeurGenericProvider {
   private dataAnimateur: Animateur = null;
   private dataBanque: Banque = null;
  
-  refentityNameRef: AngularFireList<any> = null;
+  refActeurGenericRef: AngularFireList<any> = null;
 
   constructor(public http: HttpClient,public db: AngularFireDatabase, entityType:string) 
   {
     console.log('Hello ActeurGenericProvider Provider');
     if(entityType=='Acheteur')
     {
-      this.dbPath = 'acheteurs';
+      this.dbPath = 'acteurs-db';
     }
     if(entityType=='Fournisseur')
     {
-      this.dbPath = 'fournisseurs';
+      this.dbPath = 'acteurs-db';
     }
     if(entityType=='Animateur')
     {
-      this.dbPath = 'animateurs';
+      this.dbPath = 'acteurs-db';
     }
     if(entityType=='Banque')
     {
-      this.dbPath = 'banques';
+      this.dbPath = 'banques-db';
     }
-    this.refentityNameRef = this.db.list(this.dbPath);
+    this.refActeurGenericRef = this.db.list(this.dbPath);
   }
 
-  createEntityName(p: any, entityType:string): void {
+  createActeurGeneric(p: any, entityType:any): void {
 
     if(entityType=='Acheteur')
     {
       this.dataAcheteur = p;
-      this.refentityNameRef.push(this.dataAcheteur);
+      this.refActeurGenericRef.push(this.dataAcheteur);
     }
     if(entityType=='Fournisseur')
     {
       this.dataFournisseur = p;
-      this.refentityNameRef.push(this.dataFournisseur);
+      this.refActeurGenericRef.push(this.dataFournisseur);
     }
     if(entityType=='Animateur')
     {
       this.dataAnimateur = p;
-      this.refentityNameRef.push(this.dataAnimateur);
+      this.refActeurGenericRef.push(this.dataAnimateur);
     }
     if(entityType=='Banque')
     {
       this.dataBanque = p;
-      this.refentityNameRef.push(this.dataBanque);
+      this.refActeurGenericRef.push(this.dataBanque);
     }
   }
  
-  updateEntityName(key: string, value: any, entityType:string): void {
+  updateActeurGeneric(key: string, value: any, entityType:any): void {
     if(entityType=='Acheteur')
     {
       this.dataAcheteur = value;
-      this.refentityNameRef.push(this.dataAcheteur);
+      this.refActeurGenericRef.push(this.dataAcheteur);
     }
     if(entityType=='Fournisseur')
     {
       this.dataFournisseur = value;
-      this.refentityNameRef.push(this.dataFournisseur);
+      this.refActeurGenericRef.push(this.dataFournisseur);
     }
     if(entityType=='Animateur')
     {
       this.dataAnimateur = value;
-      this.refentityNameRef.push(this.dataAnimateur);
+      this.refActeurGenericRef.push(this.dataAnimateur);
     }
     if(entityType=='Banque')
     {
       this.dataBanque = value;
-      this.refentityNameRef.push(this.dataBanque);
+      this.refActeurGenericRef.push(this.dataBanque);
     }
-    this.refentityNameRef.update(key, value).catch(error => this.handleError(error));
+    this.refActeurGenericRef.update(key, value).catch(error => this.handleError(error));
   }
  
-  deleteEntityName(key: string): void {
-    this.refentityNameRef.remove(key).catch(error => this.handleError(error));
+  deleteActeurGeneric(key: string): void {
+    this.refActeurGenericRef.remove(key).catch(error => this.handleError(error));
   }
  
-  getEntityNameList(): AngularFireList<any> {
-    return this.refentityNameRef;
+  getActeurGenericList(): AngularFireList<any> {
+    return this.refActeurGenericRef;
   }
  
   deleteAll(): void {
-    this.refentityNameRef.remove().catch(error => this.handleError(error));
+    this.refActeurGenericRef.remove().catch(error => this.handleError(error));
   }
  
   private handleError(error) {

@@ -1,0 +1,38 @@
+<!--
+  Generated template for the OperationListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+<ion-buttons start>
+  <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+  </button>
+</ion-buttons>
+
+  <ion-navbar color="primary">
+    <ion-title>Liste des operations</ion-title>
+    <ion-buttons end> 
+      <button ion-buttton ion-icon (click)='addNewOperation()'> 
+      <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding><div><form>
+<!-- <ion-item *ngFor="let operation of operations"  (click)="editOperation(operation)" >
+ -->
+  <ion-item *ngFor="let operation of operations" >
+    <ion-card> 
+      <div class="card-title">{{operation.operationUniqueID}}</div>
+      <div class="card-subtitle">{{operation.operationName}}</div>
+      <div class="card-subtitle">{{operation.operationDescription}}</div> 
+<ion-buttons end>
+<button ion-buttton ion-icon (click)="editOperation(operation)"><ion-icon name="ios-create"></ion-icon></button>
+<button ion-buttton ion-icon (click)='deleteOperation(operation.key)'><ion-icon name="ios-trash"></ion-icon></button>
+</ion-buttons>
+</ion-card>
+</ion-item>
+</form></div></ion-content>

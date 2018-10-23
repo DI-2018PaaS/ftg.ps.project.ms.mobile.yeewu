@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { map } from 'rxjs/operators';
-import { FournisseurProvider } from '../../../../providers/acteur/fournisseur/fournisseur.provider';
 import { CreateFournisseurPage } from '../create-fournisseur/create-fournisseur';
-import { Fournisseur } from './../../../../models/acteur/fournisseur/fournisseur.model';
 import { DetailFournisseurPage } from '../detail-fournisseur/detail-fournisseur';
+import { Fournisseur } from '../../../../models/acteur/fournisseur/fournisseur.model';
+import { FournisseurProvider } from '../../../../providers/acteur/fournisseur/fournisseur.provider';
 
 /**
  * Generated class for the ListFournisseurPage page.

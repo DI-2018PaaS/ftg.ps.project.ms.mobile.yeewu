@@ -1,0 +1,30 @@
+<!--
+  Generated template for the DetailDomainePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+  <ion-navbar color="primary">
+    <ion-title>Details Domaine</ion-title>
+  </ion-navbar>
+</ion-header>
+  <ion-content padding><div><form>
+      <h3>{{domaine.domaineId}}</h3>
+      <h3>{{domaine.nom}}</h3>
+      <h3>{{domaine.description}}</h3>
+      <h3>{{domaine.status}}</h3>
+	  <h3>{{domaine.userCreated}}</h3>
+      <h3>{{domaine.userLastModif}}</h3>
+      <h3>{{domaine.createdDate}}</h3>
+      <h3>{{domaine.dateastModif}}</h3>
+  <ion-buttons end>
+  <button ion-buttton ion-icon (click)='deleteDomaine(domaine.key)'><ion-icon name="ios-trash"></ion-icon></button>
+  <button ion-buttton ion-icon (click)='editDomaine()'> <ion-icon name="ios-create"></ion-icon></button>
+  </ion-buttons>
+</form></div></ion-content>

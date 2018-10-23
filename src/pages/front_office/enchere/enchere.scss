@@ -1,3 +1,21 @@
 page-enchere {
+    ion-slide.swiper-slide{
+        left: 25%
+    }
+    .thumb-img {
+        padding: 10px;
+    }
+    .details-enchere{
+        background: rgb(222, 230, 235)
+    }
 
+    rating {
+        ion-icon {
+          color: gray;
+      
+          &.filled {
+            color: #ffb400;
+          }
+        }
+      }
 }

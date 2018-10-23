@@ -11,7 +11,7 @@ import { HttpClient  } from "@angular/common/http";
 */
 @Injectable()
 export class RoleOperationProvider {
-  private dbPath = 'firebaseDecl';
+  private dbPath = 'users-db';
  
   refRoleOperationRef: AngularFireList<RoleOperation> = null;
 

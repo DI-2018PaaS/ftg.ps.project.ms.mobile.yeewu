@@ -1,0 +1,31 @@
+<!--
+  Generated template for the DetailOffrePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+  <ion-navbar color="primary">
+    <ion-title>Details Offre</ion-title>
+  </ion-navbar>
+</ion-header>
+  <ion-content padding><div><form>
+      <h3>{{offre.nUniqueOffre}}</h3>
+      <h3>{{offre.dateLancement}}</h3>
+      <h3>{{offre.dateClotureOffre}}</h3>
+      <h3>{{offre.quantiteProduit}}</h3>
+	  <h3>{{offre.nAuteurOffre}}</h3>
+      <h3>{{offre.typeAuteurOffre}}</h3>
+      <h3>{{offre.activityID}}</h3>
+      <h3>{{offre.typeArticle}}</h3>
+	  <h3>{{offre.contratId}}</h3>
+  <ion-buttons end>
+  <button ion-buttton ion-icon (click)='deleteOffre(offre.key)'><ion-icon name="ios-trash"></ion-icon></button>
+  <button ion-buttton ion-icon (click)='editOffre()'> <ion-icon name="ios-create"></ion-icon></button>
+  </ion-buttons>
+</form></div></ion-content>

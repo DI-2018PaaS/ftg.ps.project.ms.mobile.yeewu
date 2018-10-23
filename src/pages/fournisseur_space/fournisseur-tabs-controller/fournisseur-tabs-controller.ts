@@ -16,6 +16,9 @@ import { GestionCreditIDPage } from '../../common-espace/gestion-credit-id/gesti
 import { FournisseurHomePage } from '../fournisseur-home/fournisseur-home';
 //import { PlafondLigneDeCreditPage } from '../plafond-ligne-de-credit/plafond-ligne-de-credit';
 import { FournisseurSuiviPage } from '../fournisseur-suivi/fournisseur-suivi';
+import { ListMagasinPage } from '../../crud/magasin/list-magasin/list-magasin';
+import { OffreListPage } from '../../crud/offre/offre-list/offre-list';
+import { ChartsComponent } from '../../common-espace/charts/charts-component/charts.component';
 //import { FournisseurStatistiquesPage } from '../fournisseur-statistiques/fournisseur-statistiques';
 
 @Component({
@@ -24,10 +27,17 @@ import { FournisseurSuiviPage } from '../fournisseur-suivi/fournisseur-suivi';
 })
 export class FournisseurTabsControllerPage {
 
-  tab1Root: any = FournisseurHomePage;
+  //tab1Root=ListMagasinPage;
+	tab1Root=FournisseurHomePage;
+	tab2Root=OffreListPage;
+	tab3Root=FournisseurSuiviPage;
+	tab4Root=ChartsComponent;
+	myIndex:number;
+  
+/*  tab1Root: any = FournisseurHomePage;
   //tab2Root: any = PlafondLigneDeCreditPage;
   tab3Root: any = FournisseurSuiviPage;
-  tab4Root: any = FournisseurStatistiquesPage;
+  tab4Root: any = FournisseurStatistiquesPage;*/
   constructor(public navCtrl: NavController) {
   }
   goToFournisseurStatistiques(params){

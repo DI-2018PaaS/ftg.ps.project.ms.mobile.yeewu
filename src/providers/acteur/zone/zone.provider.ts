@@ -11,7 +11,7 @@ import { HttpClient  } from "@angular/common/http";
 */
 @Injectable()
 export class ZoneProvider {
-  private dbPath = 'firebaseDecl';
+  private dbPath = 'acteurs-db';
  
   refZoneRef: AngularFireList<ZoneGeographique> = null;
   

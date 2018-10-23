@@ -8,4 +8,78 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page48"></ion-content>
+<ion-content padding id="detail-notation-id">
+    <div class="fournisseur-id-desc">
+        <p>Fournisseur Name</p><ion-icon name="checkmark"></ion-icon>
+        <span class="rating review-star">
+            <span class="star-icon" [ngClass]="{full: 4 >= 1, half: 3 == 0.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 5 >= 2, half: 2 == 1.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 3 >= 3, half: 2 == 2.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 5 >= 4, half: 2 == 3.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 3 >= 5, half: 4.5 == 4.5}">&#x2605;</span>
+            </span>
+    </div>
+  <ion-card no-padding>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/img/person.png">
+      </ion-avatar>
+      <h2>Moussa Thiam</h2>
+      <p>November 5, 1955</p>
+    </ion-item>
+    <img src="assets/img/farm-1.jpg">
+    <ion-card-content>
+      <p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text.</p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>12 Likes</div>
+        </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <div class="fournisseur-id-contact">
+  <ion-row>
+    <ion-col>
+        <button ion-button icon-start clear small>
+            <ion-icon name="call"></ion-icon>
+          </button> 
+    </ion-col>
+    <ion-col>
+        <button ion-button icon-start clear small>
+            <ion-icon name="text"></ion-icon>
+          </button>
+    </ion-col>
+  </ion-row>
+</div>
+  <div class="fournisseur-id-infos">
+      <ion-row>
+          <ion-col>
+              <button ion-button icon-start clear small>
+                  Boutiques
+                </button> 
+          </ion-col>
+          <ion-col>
+              <button ion-button icon-start clear small>
+                  Magasins
+                </button>
+          </ion-col>
+          <ion-col>
+              <button ion-button icon-start clear small>
+                  Produits
+                </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-start clear small (click)="gotoDetailCommentairePage()">
+              <ion-icon name="text"></ion-icon>
+              <div>4 Comments</div>
+            </button>
+          </ion-col>
+        </ion-row>
+  </div>
+</ion-content>

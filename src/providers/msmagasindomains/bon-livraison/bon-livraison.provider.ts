@@ -11,7 +11,7 @@ import { HttpClient  } from "@angular/common/http";
 */
 @Injectable()
 export class BonLivraisonProvider {
-  private dbPath = 'firebaseDecl';
+  private dbPath = 'livraisons-db';
  
   refBonLivraisonRef: AngularFireList<BonLivraison> = null;
 

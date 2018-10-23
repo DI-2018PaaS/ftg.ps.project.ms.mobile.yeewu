@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FournisseurProvider } from '../../../../providers/acteur/fournisseur/fournisseur.provider';
 import { DetailFournisseurPage } from '../detail-fournisseur/detail-fournisseur';
 import { ListFournisseurPage } from '../list-fournisseur/list-fournisseur';
+import { FournisseurProvider } from '../../../../providers/acteur/fournisseur/fournisseur.provider';
 
 /**
  * Generated class for the EditFournisseurPage page.

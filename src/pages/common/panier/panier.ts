@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { PaiementPage } from '../paiement/paiement';
 
 /**
  * Generated class for the PanierPage page.
@@ -24,5 +25,8 @@ produits:any;
   ionViewDidLoad() {
     console.log('ionViewDidLoad PanierPage');
   }
-
+  goToPayer() {
+	this.navCtrl.push(PaiementPage);
+    console.log('Action aller vers Page Paiement');
+  }
 }

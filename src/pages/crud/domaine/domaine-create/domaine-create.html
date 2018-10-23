@@ -1,0 +1,31 @@
+<!--
+  Generated template for the DomaineCreatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+  <ion-navbar color="primary">
+    <ion-title>Creer Domaine</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+ <ion-content padding><div><form>
+ <ion-input type='text' required placeholder="domaineId" [(ngModel)]="domaineNew.domaineId"></ion-input>
+ <ion-input type='text' required placeholder="nom" [(ngModel)]="domaineNew.nom"></ion-input>
+ <ion-input type='text' required placeholder="description" [(ngModel)]="domaineNew.description"></ion-input>
+ <ion-input type='text' required placeholder="status" [(ngModel)]="domaineNew.status"> </ion-input>
+ <ion-input type='text' required placeholder="userCreated" [(ngModel)]="domaineNew.userCreated"></ion-input>
+ <ion-input type='text' required placeholder="userLastModif" [(ngModel)]="domaineNew.userLastModif"></ion-input>
+ <ion-input type='text' required placeholder="createdDate" [(ngModel)]="domaineNew.createdDate"></ion-input>
+ <ion-input type='text' required placeholder="dateastModif" [(ngModel)]="domaineNew.dateastModif"> </ion-input>
+ <button ion-button block (click)="createNewDomaine()">Ajouter</button>
+  
+</form></div></ion-content>

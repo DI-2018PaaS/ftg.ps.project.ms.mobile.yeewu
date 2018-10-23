@@ -1,0 +1,31 @@
+<!--
+  Generated template for the EnchereCreatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+  <ion-navbar color="primary">
+    <ion-title>Creer Enchere</ion-title>
+  </ion-navbar>
+</ion-header>
+ <ion-content padding><div><form>
+ <ion-input type='text' required placeholder="ID Enchere" [(ngModel)]="enchereNew.nUniqueEnchere"></ion-input>
+ <ion-input type='text' required placeholder="Lancement" [(ngModel)]="enchereNew.dateLancementEnchere"></ion-input>
+ <ion-input type='text' required placeholder="Cloture" [(ngModel)]="enchereNew.dateClotureEnchere"></ion-input>
+ <ion-input type='text' required placeholder="Quantite" [(ngModel)]="enchereNew.quantiteProduit"> </ion-input>
+ <ion-input type='text' required placeholder="Auteur" [(ngModel)]="enchereNew.nAuteurEnchere"></ion-input>
+ <ion-input type='text' required placeholder="Type Auteur" [(ngModel)]="enchereNew.typeAuteurEnchere"></ion-input>
+ <ion-input type='text' required placeholder="Prix Depart" [(ngModel)]="enchereNew.prixDepart"></ion-input>
+ <ion-input type='text' required placeholder="Prix Courant" [(ngModel)]="enchereNew.prixCourant"> </ion-input>
+ <ion-input type='text' required placeholder="Prix Vente" [(ngModel)]="enchereNew.prixDeVente"></ion-input>
+ <ion-input type='text' required placeholder="Activite" [(ngModel)]="enchereNew.activityID"></ion-input>
+ <ion-input type='text' required placeholder="Articles" [(ngModel)]="enchereNew.nArticles"></ion-input>
+ <ion-input type='text' required placeholder="Contrat" [(ngModel)]="enchereNew.contratId"> </ion-input>
+ <button ion-button block (click)="createNewEnchere()">Ajouter</button>  
+</form></div></ion-content>

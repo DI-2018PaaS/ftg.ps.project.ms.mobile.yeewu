@@ -1,0 +1,34 @@
+<!--
+  Generated template for the DetailEncherePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+  <ion-navbar color="primary">
+    <ion-title>Details Enchere</ion-title>
+  </ion-navbar>
+</ion-header>
+  <ion-content padding><div><form>
+      <h3>{{enchere.nUniqueEnchere}}</h3>
+      <h3>{{enchere.dateLancementEnchere}}</h3>
+      <h3>{{enchere.dateClotureEnchere}}</h3>
+      <h3>{{enchere.quantiteProduit}}</h3>
+	  <h3>{{enchere.nAuteurEnchere}}</h3>
+      <h3>{{enchere.typeAuteurEnchere}}</h3>
+      <h3>{{enchere.prixDepart}}</h3>
+      <h3>{{enchere.prixCourant}}</h3>
+	  <h3>{{enchere.prixDeVente}}</h3>
+      <h3>{{enchere.activityID}}</h3>
+      <h3>{{enchere.nArticles}}</h3>
+      <h3>{{enchere.contratId}}</h3>
+  <ion-buttons end>
+  <button ion-buttton ion-icon (click)='deleteEnchere(enchere.key)'><ion-icon name="ios-trash"></ion-icon></button>
+  <button ion-buttton ion-icon (click)='editEnchere()'> <ion-icon name="ios-create"></ion-icon></button>
+  </ion-buttons>
+</form></div></ion-content>

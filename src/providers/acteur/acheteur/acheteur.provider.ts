@@ -11,7 +11,7 @@ import { HttpClient  } from "@angular/common/http";
 */
 @Injectable()
 export class AcheteurProvider {
-  private dbPath = 'acheteurs';
+  private dbPath = 'acteurs-db';
  
   refAcheteurRef: AngularFireList<Acheteur> = null;
 

@@ -12,17 +12,11 @@
         </button>
         </ion-buttons>
   
-    <ion-title>Detail Produit</ion-title>
+    <ion-title>Produit (Activite)</ion-title>
   </ion-navbar>
-
 </ion-header>
-
 <ion-content padding>
-
-
-
   <ion-card>
-
     <img src="assets/img/tracteur1.jpg" />
     <ion-slides class="image-slider" loop="true"  slidesPerView="2">
       <ion-slide *ngFor="let img of images">
@@ -53,9 +47,9 @@
      </div>
 
         <ion-buttons end> 
-            <button ion-button float-right>
-                    <ion-icon name="ios-cart" (click)="showPanier()" ></ion-icon>
-            </button>
+			<button ion-button >
+            <ion-icon name="ios-cart" (click)="showPanier()">+ Ajouter</ion-icon>
+    </button>
         </ion-buttons>
 
         <ion-buttons start>

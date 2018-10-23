@@ -11,7 +11,8 @@ import { HttpClient  } from "@angular/common/http";
 */
 @Injectable()
 export class UtilisateurProvider {
-  private dbPath = 'users';
+  private dbPath = 'users-db';
+
  
   refUtilisateurRef: AngularFireList<Utilisateur> = null;
 
@@ -21,15 +22,15 @@ export class UtilisateurProvider {
   }
 
  
-  createUtilisateur(p: Utilisateur): void {
+  createUtilisateur(p: Utilisateur, acteurType: string): void {
     this.refUtilisateurRef.push(p);
   }
  
-  updateUtilisateur(key: string, value: any): void {
+  updateUtilisateur(key: string, value: any,acteurType: string): void {
     this.refUtilisateurRef.update(key, value).catch(error => this.handleError(error));
   }
  
-  deleteUtilisateur(key: string): void {
+  deleteUtilisateur(key: string,acteurType: string): void {
     this.refUtilisateurRef.remove(key).catch(error => this.handleError(error));
   }
  

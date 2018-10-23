@@ -6,13 +6,82 @@
     <ion-title>
       Gestion Suivi Notations
     </ion-title>
+    <ion-buttons end> 
+          <button ion-button icon-only light color="shadowlite" (click)="goToSearch()">
+            <ion-icon name="ios-search">
+            </ion-icon>
+          </button> 
+          <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="goToConnexion()">
+            <ion-icon name="ios-contact">
+            </ion-icon>
+          </button> 
+        </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page38">
-  <button id="gestionSuiviNotations-button94" ion-button color="dark" block on-click="goToFiltrer()">
-    Filtre Notation par activite
-  </button>
-  <button id="gestionSuiviNotations-button109" ion-button color="dark" block on-click="goToDetailNotation()">
-    Details
-  </button>
+<ion-content no-padding id="suivi-notation-id">
+  <div no-padding>
+  <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small icon-only item-left clear>
+          <ion-icon name="logo-buffer"></ion-icon>
+          <ion-select>
+                <ion-option (ionSelect)="goToEditerDomaine()">Peche</ion-option>
+                <ion-option (ionSelect)="goToEditerDomaine()">Artisanat</ion-option>
+                <ion-option (ionSelect)="goToEditerDomaine()">Agriculture</ion-option>
+                <ion-option (ionSelect)="goToEditerDomaine()">Elevage</ion-option>
+              </ion-select>
+        </button>
+      </ion-col>
+      <ion-col>
+          <button ion-button icon-start clear small icon-only item-right clear color="button-color" (click)="goToFiltrer()"> <ion-icon name="ios-funnel"></ion-icon>
+          </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button ion-button icon-start clear small icon-only clear color="button-color" (click)="goToTrier()">
+                <ion-icon name="md-options" style="margin-right:6px"></ion-icon> {{"Sort"}}
+              </button> 
+      </ion-col>
+  </ion-row>
+  </div>
+  <div *ngIf="notations" class="home-notations" >
+  <ion-list>
+      <ion-item *ngFor='let notation of notations'>
+      <ion-card (click)="goToDetailNotation()" no-padding>
+          <ion-row>
+            <ion-col>
+            <ion-row>
+            <h2>{{notation.nom}}</h2>
+            </ion-row>
+            <!--ion-row>
+              <rating [(ngModel)]="rate" readonly="false" 
+                small="true"
+              (ngModelChange)="onModelChange($event)">
+            </rating>
+            </ion-row-->
+            <ion-row>
+              <p>Emetteur: {{notation.emetteur}}</p><ion-icon name="checkmark"></ion-icon> 
+            </ion-row>
+            <ion-row>
+            <!--button ion-button outline small item-end (click)="goToDetailNotation()">Voir plus</button-->
+            <span class="rating review-star">
+              <span class="star-icon" [ngClass]="{full: notation.average_rating >= 1, half: notation.average_rating == 0.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: notation.average_rating >= 2, half: notation.average_rating == 1.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: notation.average_rating >= 3, half: notation.average_rating == 2.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: notation.average_rating >= 4, half: notation.average_rating == 3.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: notation.average_rating >= 5, half: notation.average_rating == 4.5}">&#x2605;</span>
+              </span>
+            </ion-row>
+            </ion-col>
+            <ion-col>
+            <ion-row>
+            <h5 ion-text color="mauve">Date: 09/09/12</h5>
+            </ion-row>
+            <ion-row>
+            <ion-icon name="thumbs-down" color="danger"> votes: {{notation.vote_down}} </ion-icon> 
+            </ion-row>
+            <ion-row>
+            <ion-icon name="thumbs-up" color="favorite"> votes: {{notation.vote_up}} </ion-icon> 
+            </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+        </ion-item>
+  </ion-list>
+  </div>
 </ion-content>

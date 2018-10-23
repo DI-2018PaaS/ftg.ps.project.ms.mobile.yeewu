@@ -33,6 +33,8 @@ $colors: (
   accent:     #202020,
   dark:       #222222,
   favorite:   #69BB7B,
+  mauve:   rgb(200, 42, 231),
+  orange:   rgb(240, 142, 30),
   // Button Twitter
   twitter:(
     base: #64B5F6,
@@ -54,8 +56,14 @@ $colors: (
     contrast: #fff
   ),
 );
+$product-background-color: #f2f2f2;
 
- $product-background-color: #f2f2f2;
+// Template 3
+$button-color: #25242c;
+ $side-heading-color:  #25242c;
+// Template 3 End
+
+ 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

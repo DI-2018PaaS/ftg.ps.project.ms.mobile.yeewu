@@ -1,0 +1,35 @@
+<!--
+  Generated template for the CompteEditPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+  <ion-navbar color="primary">
+    <ion-title>Editer Compte</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding><div><form>
+ <ion-input type='text' required placeholder="code" [(ngModel)]="compteNew.username"></ion-input>
+ <ion-input type='text' required placeholder="code" [(ngModel)]="compteNew.utilUniqueid"></ion-input>
+ <ion-input type='text' required placeholder="code" [(ngModel)]="compteNew.lastName"></ion-input>
+ <ion-input type='text' required placeholder="code" [(ngModel)]="compteNew.firstName"></ion-input>
+ <ion-input type='text' required placeholder="code" [(ngModel)]="compteNew.mail"></ion-input>
+ <ion-input type='text' required placeholder="code" [(ngModel)]="compteNew.phoneNumber"></ion-input>
+ <ion-input type='text' required placeholder="code" [(ngModel)]="compteNew.password"></ion-input>
+ <ion-input type='text' required placeholder="code" [(ngModel)]="compteNew.creationDateUser"></ion-input>
+ <ion-input type='text' required placeholder="code" [(ngModel)]="compteNew.lastConnectionDate"></ion-input>
+ <ion-input type='text' required placeholder="code" [(ngModel)]="compteNew.userActeurID"></ion-input>
+    <ion-buttons end>
+    <button ion-button block (click)="updateCompte()">valider</button>
+  </ion-buttons>
+
+</form></div></ion-content>

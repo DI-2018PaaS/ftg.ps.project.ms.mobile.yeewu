@@ -11,7 +11,7 @@ import { HttpClient  } from "@angular/common/http";
 */
 @Injectable()
 export class DirectPaiementProvider {
-  private dbPath = 'firebaseDecl';
+  private dbPath = 'paiements-db';
  
   refDirectPaiementRef: AngularFireList<DirectPaiement> = null;
 

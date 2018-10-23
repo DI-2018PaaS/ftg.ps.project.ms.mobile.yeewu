@@ -1,7 +1,7 @@
-import { Fournisseur } from './../../../models/acteur/fournisseur/fournisseur.model';
-import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient  } from "@angular/common/http";
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Fournisseur } from '../../../models/acteur/fournisseur/fournisseur.model';
 
 /*
   Generated class for the FournisseurProvider provider.
@@ -11,38 +11,37 @@ import { HttpClient  } from "@angular/common/http";
 */
 @Injectable()
 export class FournisseurProvider {
-  private dbPath = 'firebaseDecl';
+  private dbPath = 'acteurs-db';
  
-  refFournisseurRef: AngularFireList<Fournisseur> = null;
+  fournisseurRef: AngularFireList<Fournisseur> = null;
 
   constructor(public http: HttpClient,public db: AngularFireDatabase) {
     console.log('Hello FournisseurProvider Provider');
-    this.refFournisseurRef = this.db.list(this.dbPath);
+    this.fournisseurRef = this.db.list(this.dbPath);
   }
 
  
   createFournisseur(p: Fournisseur): void {
-    this.refFournisseurRef.push(p);
+    this.fournisseurRef.push(p);
   }
  
   updateFournisseur(key: string, value: any): void {
-    this.refFournisseurRef.update(key, value).catch(error => this.handleError(error));
+    this.fournisseurRef.update(key, value).catch(error => this.handleError(error));
   }
  
   deleteFournisseur(key: string): void {
-    this.refFournisseurRef.remove(key).catch(error => this.handleError(error));
+    this.fournisseurRef.remove(key).catch(error => this.handleError(error));
   }
  
   getFournisseurList(): AngularFireList<Fournisseur> {
-    return this.refFournisseurRef;
+    return this.fournisseurRef;
   }
  
   deleteAll(): void {
-    this.refFournisseurRef.remove().catch(error => this.handleError(error));
+    this.fournisseurRef.remove().catch(error => this.handleError(error));
   }
  
   private handleError(error) {
     console.log(error);
   }
-
 }

@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Detail Commentaires
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="detail-commentaires-id">
+  <ion-card>
+    <img src="assets/img/person.png">
+    <ion-card-content>
+        <h2>Moussa Thiam</h2><ion-icon name="checkmark"></ion-icon>
+        <p>November 5, 1955</p>
+        <span class="rating review-star">
+            <span class="star-icon" [ngClass]="{full: 4 >= 1, half: 3 == 0.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 5 >= 2, half: 2 == 1.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 3 >= 3, half: 2 == 2.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 5 >= 4, half: 2 == 3.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 3 >= 5, half: 4.5 == 4.5}">&#x2605;</span>
+        </span>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>12 Likes</div>
+        </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <div *ngIf="commentaires" class="home-commentaires">
+      <ion-list>
+      <ion-item *ngFor='let commentaire of commentaires'>
+      <ion-row>
+      <ion-col item-start>
+          <ion-avatar item-start>
+        <img src="assets/img/person.png">
+      </ion-avatar>
+      <h2>Moussa Tall</h2>
+      <p>Sept 15, 2018 03:24 PM</p>
+      </ion-col>
+      <ion-col item-end>
+      <span class="rating review-star">
+          <h3 style="margin-bottom:0px;font-size:15px">
+        <span class="star-icon" [ngClass]="{full: 4 >= 1, half: 3 == 0.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 5 >= 2, half: 2 == 1.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 3 >= 3, half: 2 == 2.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 5 >= 4, half: 2 == 3.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 3 >= 5, half: 4.5 == 4.5}">&#x2605;</span>
+          </h3>
+      </span>
+      </ion-col>
+      </ion-row>
+      <ion-row>
+        <div><h4>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text 
+        </h4></div>
+      </ion-row>
+      <ion-row>
+          <ion-icon name="thumbs-down" color="danger"></ion-icon> <p> votes: {{commentaire.vote_down}}</p>
+          <ion-icon name="thumbs-up" color="favorite"></ion-icon> <p> votes: {{commentaire.vote_up}}</p>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+      </div>
+</ion-content>

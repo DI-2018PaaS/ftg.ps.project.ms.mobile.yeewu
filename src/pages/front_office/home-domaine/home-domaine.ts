@@ -11,13 +11,19 @@ import { EncherePage } from '../enchere/enchere';
 import { DomainePage } from '../domaine/domaine';
 import { ActivitePage } from '../activite/activite';
 import { LoginPage } from '../../common/login/login';
+import { ServiceListPage } from '../../crud/service/service-list/service-list';
+import { ProduitListPage } from '../../crud/produit/produit-list/produit-list';
+import { ListMagasinPage } from '../../crud/magasin/list-magasin/list-magasin';
+import { ListBoutiquePage } from '../../crud/boutique/list-boutique/list-boutique';
+import { DetailNotationPage } from '../../common-espace/detail-notation/detail-notation';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home-domaine.html'
 })
 export class HomeDomainePage {
-	
+	public isSearchBarOpened = false;
+	segment : any;
 	datas = [
     {
       title: 'Produit A',
@@ -53,9 +59,37 @@ export class HomeDomainePage {
     }
   ]
 
+  notations = [
+    {
+      nom: 'Alpha A',
+      emetteur: 'Diop',
+      vote_up:'10',
+      vote_down: '3',
+      average_rating:'4'
+    },
+    {
+      nom: 'Alpha B',
+      emetteur: 'Fall',
+      vote_up:'40',
+      vote_down: '3',
+      average_rating:'2.5'
+    },
+    {
+      nom: 'Alpha C',
+      emetteur: 'Ba',
+      vote_up:'15',
+      vote_down: '6',
+      average_rating:'4.5'
+    }
+  ]
   constructor(public navCtrl: NavController) {
+		this.segment = "boutique";
   }
-  goToRating(params){
+  onSearch(event)
+  {
+	  console.log(event.target.value);
+  }
+  goToRatings(params){
     if (!params) params = {};
     this.navCtrl.push(RatingPage);
   }goToFournisseur(params){
@@ -88,5 +122,29 @@ export class HomeDomainePage {
   }goToConnexion(params){
     if (!params) params = {};
     this.navCtrl.push(LoginPage);
+  }
+  goToBoutiques(params){
+    if (!params) params = {};
+    this.navCtrl.push(ActivitePage);
+  }
+  goToListeBoutique(params){
+    if (!params) params = {};
+    this.navCtrl.push(ListBoutiquePage);
+  }
+  goToListeMagasin(params){
+    if (!params) params = {};
+    this.navCtrl.push(ListMagasinPage);
+  }
+  goToListeProduit(params){
+    if (!params) params = {};
+    this.navCtrl.push(ProduitListPage);
+  }
+  goToListeService(params){
+    if (!params) params = {};
+    this.navCtrl.push(ServiceListPage);
+  }
+  goToDetailNotation(params){
+    if (!params) params = {};
+    this.navCtrl.push(DetailNotationPage);
   }
 }

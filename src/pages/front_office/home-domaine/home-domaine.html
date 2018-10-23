@@ -3,9 +3,11 @@
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
-      <ion-title>Home</ion-title>
-      <ion-buttons end> 
-        <button ion-button icon-only light color="shadowlite" (click)="goToSearch()">
+      <ion-title *ngIf="!isSearchBarOpened">Home</ion-title>
+	  <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchBarOpened=false">
+      </ion-searchbar>
+      <ion-buttons end>
+        <button ion-button icon-only *ngIf="!isSearchBarOpened" light color="shadowlite" (click)="isSearchBarOpened=true">
           <ion-icon ios="ios-search" md="md-search">
           </ion-icon>
         </button> 
@@ -22,29 +24,26 @@
             <ion-slide *ngFor='let value of datas'> <img src="{{value.image}}"> </ion-slide>
         </ion-slides>
     </div>
-    <div class="segment">
-        <ion-segment [(ngModel)]="segment" color="blue">
-            <ion-segment-button tappable>
-                <ion-label>Boutique</ion-label>
-            </ion-segment-button>
-            <ion-segment-button tappable>
-                <ion-label>Encheres </ion-label>
-            </ion-segment-button>
-            <ion-segment-button tappable>
-                <ion-label>Offres</ion-label>
-            </ion-segment-button>
-			<ion-segment-button tappable>
-                <ion-label>Rating</ion-label>
-            </ion-segment-button>
+    <div>
+        <ion-segment [(ngModel)]="segment">
+          <ion-segment-button value="boutique">
+            Boutique
+          </ion-segment-button>
+          <ion-segment-button value="enchere">
+            Enchere
+          </ion-segment-button>
+		  <ion-segment-button value="offre">
+            Offre
+          </ion-segment-button>
+		  <ion-segment-button value="rating">
+            Rating
+          </ion-segment-button>
         </ion-segment>
-    </div>
-	<div class="category-class">
-        <!--ion-spinner name="crescent"> </ion-spinner-->
-        <div class="main-categories">
-            <ion-row class="row unlimited-items">
+      </div>
+      <div [ngSwitch]="segment">
+			<ion-row class="row unlimited-items" *ngSwitchCase="'boutique'">
                 <ion-col class="col">
-                    <!--a (click)="getCategory(item.id, item.slug, item.name)"-->
-					<a (click)="goToActivite()">
+					<a (click)="goToBoutiques()">
                         <ion-card>
                             <ion-card-content> 
                                 <img src="assets/img/logo-1.png"/> 
@@ -56,7 +55,7 @@
                     </a>
                 </ion-col>
 				<ion-col class="col">
-                    <a (click)="goToActivite()">
+                    <a (click)="goToBoutiques()">
                         <ion-card>
                             <ion-card-content> 
                                 <img src="assets/img/logo-2.png"/>
@@ -68,33 +67,96 @@
                     </a>
                 </ion-col>
             </ion-row>
-            <ion-row class="row unlimited-items">
-                    <ion-col class="col">
-                        <!--a (click)="getCategory(item.id, item.slug, item.name)"-->
-                        <a (click)="goToActivite()">
-                            <ion-card>
-                                <ion-card-content> 
-                                    <img src="assets/img/logo-3.png"/> 
-                                </ion-card-content>
-                                <div text-center>
-                                    <ion-label  > Activite C </ion-label>
-                                </div>
-                            </ion-card>
-                        </a>
-                    </ion-col>
-                    <ion-col class="col">
-                        <a (click)="goToActivite()">
-                            <ion-card>
-                                <ion-card-content> 
-                                    <img src="assets/img/logo-4.png"/>
-                                </ion-card-content>
-                                <div text-center>
-                                    <ion-label color="primary" > Activite D </ion-label>
-                                </div>
-                            </ion-card>
-                        </a>
-                    </ion-col>
-                </ion-row>
+			<ion-row class="row unlimited-items" *ngSwitchCase="'enchere'">
+                <ion-col class="col">
+					<a (click)="goToEncheres()">
+                        <ion-card>
+                            <ion-card-content> 
+                                <img src="assets/img/logo-1.png"/> 
+                            </ion-card-content>
+                            <div text-center>
+                                <ion-label  > Activite C </ion-label>
+                            </div>
+                        </ion-card>
+                    </a>
+                </ion-col>
+				<ion-col class="col">
+                    <a (click)="goToEncheres()">
+                        <ion-card>
+                            <ion-card-content> 
+                                <img src="assets/img/logo-2.png"/>
+                            </ion-card-content>
+                            <div text-center>
+                                <ion-label color="primary" > Activite D </ion-label>
+                            </div>
+                        </ion-card>
+                    </a>
+                </ion-col>
+            </ion-row>
+			<ion-row class="row unlimited-items" *ngSwitchCase="'offre'">
+                <ion-col class="col">
+					<a (click)="goToOffres()">
+                        <ion-card>
+                            <ion-card-content> 
+                                <img src="assets/img/logo-1.png"/> 
+                            </ion-card-content>
+                            <div text-center>
+                                <ion-label  > Activite E </ion-label>
+                            </div>
+                        </ion-card>
+                    </a>
+                </ion-col>
+				<ion-col class="col">
+                    <a (click)="goToOffres()">
+                        <ion-card>
+                            <ion-card-content> 
+                                <img src="assets/img/logo-2.png"/>
+                            </ion-card-content>
+                            <div text-center>
+                                <ion-label color="primary" > Activite F </ion-label>
+                            </div>
+                        </ion-card>
+                    </a>
+                </ion-col>
+            </ion-row>
+            <ion-row *ngSwitchCase="'rating'">
+				 <ion-item *ngFor='let notation of notations'>
+					<ion-card (click)="goToDetailNotation()" no-padding>
+						<ion-row>
+							<ion-col>
+							<ion-row>
+							<h2>{{notation.nom}}</h2>
+							</ion-row>
+							<!--ion-row>
+							  <rating [(ngModel)]="rate" readonly="false" 
+								small="true"
+							  (ngModelChange)="onModelChange($event)">
+							</rating>
+							</ion-row-->
+							<ion-row>
+							  <p>Emetteur: {{notation.emetteur}}</p><ion-icon name="checkmark"></ion-icon> 
+							</ion-row>
+							<ion-row>
+							<!--button ion-button outline small item-end (click)="goToDetailNotation()">Voir plus</button-->
+							<span class="rating review-star">
+							  <span class="star-icon" [ngClass]="{full: notation.average_rating >= 1, half: notation.average_rating == 0.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: notation.average_rating >= 2, half: notation.average_rating == 1.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: notation.average_rating >= 3, half: notation.average_rating == 2.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: notation.average_rating >= 4, half: notation.average_rating == 3.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: notation.average_rating >= 5, half: notation.average_rating == 4.5}">&#x2605;</span>
+							  </span>
+							</ion-row>
+							</ion-col>
+							<ion-col>
+							<ion-row>
+							<h5 ion-text color="mauve">Date: 09/09/12</h5>
+							</ion-row>
+							<ion-row>
+							<ion-icon name="thumbs-down" color="danger"> votes: {{notation.vote_down}} </ion-icon> 
+							</ion-row>
+							<ion-row>
+							<ion-icon name="thumbs-up" color="favorite"> votes: {{notation.vote_up}} </ion-icon> 
+							</ion-row>
+							</ion-col>
+						  </ion-row>
+					</ion-card>
+				 </ion-item>
+            </ion-row>
         </div>
-    </div>
 </ion-content>

@@ -11,7 +11,7 @@ import { HttpClient  } from "@angular/common/http";
 */
 @Injectable()
 export class OperationProvider {
-  private dbPath = 'firebaseDecl';
+  private dbPath = 'users-db';
  
   refOperationRef: AngularFireList<Operation> = null;
 

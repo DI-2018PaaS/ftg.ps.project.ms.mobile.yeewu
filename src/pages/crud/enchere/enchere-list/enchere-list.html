@@ -1,0 +1,45 @@
+<!--
+  Generated template for the EnchereListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+<ion-buttons start>
+  <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+  </button>
+</ion-buttons>
+  <ion-navbar color="primary">
+    <ion-title>Liste des encheres</ion-title>
+    <ion-buttons end> 
+      <button ion-buttton ion-icon (click)='addNewEnchere()'> 
+      <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding><div><form>
+<!-- <ion-item *ngFor="let enchere of encheres"  (click)="editEnchere(enchere)" >
+ -->
+  <ion-item *ngFor="let enchere of encheres" >
+    <ion-card> 
+      <div class="card-title">{{enchere.nUniqueEnchere}}</div>
+      <div class="card-subtitle">{{enchere.dateLancementEnchere}}</div>
+      <div class="card-subtitle">{{enchere.dateClotureEnchere}}</div>
+      <div class="card-subtitle">{{enchere.quantiteProduit}}</div>
+	  <div class="card-subtitle">{{enchere.nAuteurEnchere}}</div>
+      <div class="card-subtitle">{{enchere.typeAuteurEnchere}}</div>
+      <div class="card-subtitle">{{enchere.prixDepart}}</div>
+      <div class="card-subtitle">{{enchere.prixCourant}}</div>
+	  <div class="card-subtitle">{{enchere.prixDeVente}}</div>
+      <div class="card-subtitle">{{enchere.activityID}}</div>
+      <div class="card-subtitle">{{enchere.nArticles}}</div>
+      <div class="card-subtitle">{{enchere.contratId}}</div> 
+<ion-buttons end>
+<button ion-buttton ion-icon (click)="editEnchere(enchere)"><ion-icon name="ios-create"></ion-icon></button>
+<button ion-buttton ion-icon (click)='deleteEnchere(enchere.key)'><ion-icon name="ios-trash"></ion-icon></button>
+</ion-buttons>
+</ion-card>
+</ion-item>
+</form></div></ion-content>

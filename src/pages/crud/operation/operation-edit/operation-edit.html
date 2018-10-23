@@ -1,0 +1,28 @@
+<!--
+  Generated template for the OperationEditPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+  <ion-navbar color="primary">
+    <ion-title>Editer Operation</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding><div><form>
+<ion-input type='text' required placeholder="ID" [(ngModel)]="operationNew.operationUniqueID"></ion-input>
+ <ion-input type='text' required placeholder="Nom" [(ngModel)]="operationNew.operationName"></ion-input>
+ <ion-input type='text' required placeholder="Description" [(ngModel)]="operationNew.operationDescription"></ion-input>
+    <ion-buttons end>
+    <button ion-button block (click)="updateOperation()">valider</button>
+  </ion-buttons>
+
+</form></div></ion-content>

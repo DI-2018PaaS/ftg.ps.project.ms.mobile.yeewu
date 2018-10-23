@@ -11,7 +11,7 @@ import { HttpClient  } from "@angular/common/http";
 */
 @Injectable()
 export class AppelOffreProvider {
-  private dbPath = 'firebaseDecl';
+  private dbPath = 'msencheresoffres-db';
  
   refAppelOffreRef: AngularFireList<AppelOffre> = null;
 

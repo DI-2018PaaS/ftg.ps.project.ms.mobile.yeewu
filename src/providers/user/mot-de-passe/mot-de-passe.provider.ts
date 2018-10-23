@@ -11,7 +11,7 @@ import { HttpClient  } from "@angular/common/http";
 */
 @Injectable()
 export class MotDePasseProvider {
-  private dbPath = 'firebaseDecl';
+  private dbPath = 'users-db';
  
   refMotDePasseRef: AngularFireList<MotDePasse> = null;
 

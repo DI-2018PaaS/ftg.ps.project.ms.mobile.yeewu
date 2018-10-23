@@ -3,6 +3,6 @@ export class Service {
     code: string;
     designation: string;
     prixUnitaire: number;
-    descriptionProduit: string;
+    descriptionService: string;
     zoneGeographiqueId: number;
 }

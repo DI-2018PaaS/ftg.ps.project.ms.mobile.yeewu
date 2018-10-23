@@ -11,7 +11,7 @@ import { HttpClient  } from "@angular/common/http";
 */
 @Injectable()
 export class ActiviteProvider {
-  private dbPath = 'firebaseDecl';
+  private dbPath = 'domaines-db';
  
   refActiviteRef: AngularFireList<Activite> = null;
 

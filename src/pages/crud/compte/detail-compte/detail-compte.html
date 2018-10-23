@@ -1,0 +1,32 @@
+<!--
+  Generated template for the DetailComptePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+  <ion-navbar color="primary">
+    <ion-title>details Compte</ion-title>
+  </ion-navbar>
+</ion-header>
+  <ion-content padding><div><form>
+      <h3>{{compte.username}}</h3>
+      <h3>{{compte.utilUniqueid}}</h3>
+      <h3>{{compte.lastName}}</h3>
+      <h3>{{compte.firstName}}</h3>
+	  <h3>{{compte.mail}}</h3>
+      <h3>{{compte.phoneNumber}}</h3>
+      <h3>{{compte.password}}</h3>
+      <h3>{{compte.creationDateUser}}</h3>
+	  <h3>{{compte.lastConnectionDate}}</h3>
+      <h3>{{compte.userActeurID}}</h3>
+  <ion-buttons end>
+  <button ion-buttton ion-icon (click)='deleteCompte(compte.key)'><ion-icon name="ios-trash"></ion-icon></button>
+  <button ion-buttton ion-icon (click)='editCompte()'> <ion-icon name="ios-create"></ion-icon></button>
+  </ion-buttons>
+</form></div></ion-content>

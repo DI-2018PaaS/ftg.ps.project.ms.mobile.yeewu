@@ -1,6 +1,9 @@
-<ion-tabs id="fournisseurTabsController-tabs1">
-  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home" id="fournisseurTabsController-tab1"></ion-tab>
-  <!--ion-tab [root]="tab2Root" tabTitle="Alertes" tabIcon="flash" id="fournisseurTabsController-tab2"></ion-tab-->
-  <ion-tab [root]="tab3Root" tabTitle="Suivi" tabIcon="cog" id="fournisseurTabsController-tab3"></ion-tab>
-  <ion-tab [root]="tab4Root" tabTitle="Statistique" tabIcon="stats" id="fournisseurTabsController-tab4"></ion-tab>
+<ion-tabs [selectedIndex] = "myIndex">
+    <!--ion-tab  [root]="tab1Root" tabTitle="Vente" tabIcon="ios-apps-outline" id="fournisseurTabsController-tab1"></ion-tab-->
+	<!--ion-tab  [root]="tab1Root" tabTitle="Vente" tabIcon="ios-apps-outline" id="fournisseurTabsController-tab1"></ion-tab-->
+	<ion-tab  [root]="tab1Root" tabTitle="Vente" tabIcon="ios-basket-outline" id="fournisseurTabsController-tab1"></ion-tab>
+    <ion-tab  [root]="tab2Root" tabTitle="Offre" tabIcon="ios-cube-outline" id="fournisseurTabsController-tab2"></ion-tab>
+    <ion-tab  [root]="tab3Root" tabTitle="Suivi" tabIcon="cog" id="fournisseurTabsController-tab3"></ion-tab>
+	<!--ion-tab  [root]="tab3Root" tabTitle="Suivi" tabIcon="ios-basket-outline" id="fournisseurTabsController-tab3"></ion-tab-->
+    <ion-tab  [root]="tab4Root" tabTitle="Statistique" tabIcon="stats" id="fournisseurTabsController-tab4"></ion-tab>
 </ion-tabs>

@@ -2,24 +2,24 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { AdministrateurHomePage } from '../../admin_space/administrateur-home/administrateur-home';
-import { EditerOperationPage } from '../../crud/editer-operation/editer-operation';
-import { EditerRolePage } from '../../crud/editer-role/editer-role';
-import { EditerActivitPage } from '../../crud/editer-activit/editer-activit';
-import { EditerDomainePage } from '../../crud/editer-domaine/editer-domaine';
-import { EditerComptePage } from '../../crud/editer-compte/editer-compte';
-import { EditerMagasinPage } from '../../crud/editer-magasin/editer-magasin';
-import { EditerBoutiquePage } from '../../crud/editer-boutique/editer-boutique';
-import { EditerProduitPage } from '../../crud/editer-produit/editer-produit';
-import { EditerServicePage } from '../../crud/editer-service/editer-service';
-import { EditerCategoriePage } from '../../crud/editer-categorie/editer-categorie';
+import { OperationEditPage } from '../../crud/operation/operation-edit/operation-edit';
+import { RoleEditPage } from '../../crud/role/role-edit/role-edit';
+import { ActiviteEditPage } from '../../crud/activite/activite-edit/activite-edit';
+import { DomaineEditPage } from '../../crud/domaine/domaine-edit/domaine-edit';
+import { CompteEditPage } from '../../crud/compte/compte-edit/compte-edit';
+import { ProduitEditPage } from '../../crud/produit/produit-edit/produit-edit';
+import { ServiceEditPage } from '../../crud/service/service-edit/service-edit';
+import { CategorieEditPage } from '../../crud/categorie/categorie-edit/categorie-edit';
 import { RecherchePage } from '../recherche/recherche';
 import { FiltrerPage } from '../filtrer/filtrer';
 import { TrierPage } from '../trier/trier';
-import { EditerOffrePage } from '../../crud/editer-offre/editer-offre';
-import { EditerEncherePage } from '../../crud/editer-enchere/editer-enchere';
+import { OffreEditPage } from '../../crud/offre/offre-edit/offre-edit';
+import { EnchereEditPage } from '../../crud/enchere/enchere-edit/enchere-edit';
 //import { MotDePasseOubliPage } from '../mot-de-passe-oubli/mot-de-passe-oubli';
 import { InscriptionPage } from '../inscription/inscription';
 import { InscriptionOKPage } from '../inscription-ok/inscription-ok';
+import { EditBoutiquePage } from '../../crud/boutique/edit-boutique/edit-boutique';
+import { EditMagasinPage } from '../../crud/magasin/edit-magasin/edit-magasin';
 
 @Component({
   selector: 'page-mot-de-passe-oubli',
@@ -37,34 +37,34 @@ export class MotDePasseOubliPage {
     this.navCtrl.push(AdministrateurHomePage);
   }goToEditerOperation(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerOperationPage);
+    this.navCtrl.push(OperationEditPage);
   }goToEditerRole(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerRolePage);
+    this.navCtrl.push(RoleEditPage);
   }goToEditerActivit(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerActivitPage);
+    this.navCtrl.push(ActiviteEditPage);
   }goToEditerDomaine(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerDomainePage);
+    this.navCtrl.push(DomaineEditPage);
   }goToEditerCompte(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerComptePage);
+    this.navCtrl.push(CompteEditPage);
   }goToEditerMagasin(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerMagasinPage);
+    this.navCtrl.push(EditMagasinPage);
   }goToEditerBoutique(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerBoutiquePage);
+    this.navCtrl.push(EditBoutiquePage);
   }goToEditerProduit(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerProduitPage);
+    this.navCtrl.push(ProduitEditPage);
   }goToEditerService(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerServicePage);
+    this.navCtrl.push(ServiceEditPage);
   }goToEditerCategorie(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerCategoriePage);
+    this.navCtrl.push(CategorieEditPage);
   }goToRecherche(params){
     if (!params) params = {};
     this.navCtrl.push(RecherchePage);
@@ -76,10 +76,10 @@ export class MotDePasseOubliPage {
     this.navCtrl.push(TrierPage);
   }goToEditerOffre(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerOffrePage);
+    this.navCtrl.push(OffreEditPage);
   }goToEditerEnchere(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerEncherePage);
+    this.navCtrl.push(EnchereEditPage);
   }goToMotDePasseOubli(params){
     if (!params) params = {};
     this.navCtrl.push(MotDePasseOubliPage);

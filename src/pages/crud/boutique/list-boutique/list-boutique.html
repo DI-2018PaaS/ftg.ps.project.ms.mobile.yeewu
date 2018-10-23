@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+  <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+  </button>
+    <ion-title *ngIf="!isSearchBarOpened">Boutiques</ion-title>
+	  <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchBarOpened=false">
+      </ion-searchbar>
+      <ion-buttons end>
+        <button ion-button icon-only *ngIf="!isSearchBarOpened" light color="shadowlite" (click)="isSearchBarOpened=true">
+          <ion-icon ios="ios-search" md="md-search">
+          </ion-icon>
+        </button> 
+        <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="goToConnexion()">
+          <ion-icon ios="ios-contact" md="md-contact">
+          </ion-icon>
+        </button> 
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+<div><ion-row>
+        <ion-col>
+          <button ion-button clear small icon-only>
+            <ion-icon name="arrow-dropdown-circle"></ion-icon>
+            <ion-select>
+                  <ion-option (ionSelect)="goToCreerBoutique()"><ion-icon name="pricetags">Creer Boutique</ion-icon></ion-option>
+                  <ion-option (ionSelect)="goToCreerMagasin()"><ion-icon name="bookmark"></ion-icon>Creer Magasin</ion-option>
+                  <ion-option (ionSelect)="goToCreerProduit()"><ion-icon name="basket"></ion-icon>Creer Produit</ion-option>
+                  <ion-option (ionSelect)="goToCreerService()"> <ion-icon name="settings"></ion-icon>Creer Service</ion-option>
+            </ion-select>
+          </button>
+        </ion-col>
+        <ion-col>
+            <button ion-button clear small icon-only> 
+      <ion-icon name="ios-funnel"></ion-icon>
+      <ion-select>
+        <ion-option (ionSelect)="goToListeBoutique()">Liste Boutique</ion-option>
+        <ion-option (ionSelect)="goToListeMagasin()">Liste Magasin</ion-option>
+        <ion-option (ionSelect)="goToListeProduit()">Liste Produits</ion-option>
+        <ion-option (ionSelect)="goToListeService()">Liste Services</ion-option>
+            </ion-select>
+            </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button ion-button clear small (click)="goToTrier()">
+             <ion-icon name="md-options"> {{"Sort"}} </ion-icon>
+          </button> 
+        </ion-col>
+    </ion-row></div>
+  <ion-item *ngFor="let boutique of boutiques" >
+
+ <h3>{{boutique.ref}}</h3>
+<h3>{{boutique.adresse}}</h3>
+<h3>{{boutique.description}}</h3>
+<ion-buttons end>
+<button ion-buttton ion-icon (click)="seeProduct(magasin)"><ion-icon name="basket"></ion-icon></button>
+<button ion-buttton ion-icon (click)="editBoutique(boutique)"><ion-icon name="ios-create"></ion-icon></button>
+<button ion-buttton ion-icon (click)='deleteBoutique(boutique.key)'><ion-icon name="ios-trash"></ion-icon></button>
+</ion-buttons>
+</ion-item>
+</ion-content>

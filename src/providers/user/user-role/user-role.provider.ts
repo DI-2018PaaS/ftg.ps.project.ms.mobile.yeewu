@@ -11,7 +11,7 @@ import { HttpClient  } from "@angular/common/http";
 */
 @Injectable()
 export class UserRoleProvider {
-  private dbPath = 'userroles';
+  private dbPath = 'users-db';
  
   refUserRoleRef: AngularFireList<UserRole> = null;
 

@@ -1,15 +1,43 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
     <ion-title>
-      Gestion Remboursement #ID
+      Modifier Remboursement
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page25">
-  <button id="gestionRemboursementID-button65" ion-button color="dark" block on-click="goToRemboursementPret()">
-    Retour Liste Remboursement
+<ion-content padding id="page3">
+  <div class="spacer" style="width:300px;height:63px;" id="modifierRemboursement-spacer6"></div>
+  <form id="modifierRemboursement-form1">
+    <ion-item id="modifierRemboursement-input1">
+      <ion-label>
+        Montant Actuel
+      </ion-label>
+      <ion-input type="text" placeholder=""></ion-input>
+    </ion-item>
+    <ion-item id="modifierRemboursement-input2">
+      <ion-label>
+        Nouveau Montant
+      </ion-label>
+      <ion-input type="text" placeholder=""></ion-input>
+    </ion-item>
+    <ion-item id="modifierRemboursement-toggle1">
+      <ion-label>
+        Immediate
+      </ion-label>
+      <ion-toggle color="positive" checked="false"></ion-toggle>
+    </ion-item>
+  </form>
+  <div class="spacer" style="width:300px;height:25px;" id="modifierRemboursement-spacer7"></div>
+  <button id="modifierRemboursement-button7" ion-button color="positive" block>
+    Date 11/12/2017
+  </button>
+  <button id="modifierRemboursement-button8" ion-button color="positive" block>
+    Supprimer
+  </button>
+  <button id="modifierRemboursement-button9" ion-button color="positive" block>
+    Annuler
+  </button>
+  <button id="modifierRemboursement-button10" ion-button color="positive" block>
+    Enregistrer
   </button>
 </ion-content>

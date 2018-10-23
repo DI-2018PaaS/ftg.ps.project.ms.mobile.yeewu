@@ -16,6 +16,7 @@ import { GestionCreditIDPage } from '../../common-espace/gestion-credit-id/gesti
 import { AdministrateurHomePage } from '../administrateur-home/administrateur-home';
 //import { PlafondLigneDeCreditPage } from '../plafond-ligne-de-credit/plafond-ligne-de-credit';
 import { AdministrateurSuiviPage } from '../administrateur-suivi/administrateur-suivi';
+import { ChartsComponent } from '../../common-espace/charts/charts-component/charts.component';
 //import { AdministrateurStatistiquesPage } from '../administrateur-statistiques/administrateur-statistiques';
 
 @Component({
@@ -27,7 +28,9 @@ export class AdminTabsControllerPage {
   tab1Root: any = AdministrateurHomePage;
   tab2Root: any = PlafondLigneDeCreditPage;
   tab3Root: any = AdministrateurSuiviPage;
-  tab4Root: any = AdministrateurStatistiquesPage;
+  //tab4Root: any = AdministrateurStatistiquesPage;
+  tab4Root: any = ChartsComponent;
+  
   constructor(public navCtrl: NavController) {
   }
   goToAdministrateurStatistiques(params){

@@ -6,7 +6,6 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'recherche.html'
 })
 export class RecherchePage {
-
   constructor(public navCtrl: NavController) {
   }
   

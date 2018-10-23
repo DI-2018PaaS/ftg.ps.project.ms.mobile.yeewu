@@ -6,39 +6,76 @@
     <ion-title>
       Fournisseur Suivi
     </ion-title>
+	<ion-buttons end>
+        <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="goToConnexion()">
+          <ion-icon ios="ios-contact" md="md-contact">
+          </ion-icon>
+        </button> 
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
+<div class="spacer" style="width:300px;height:60px;" id="fournisseur-spacer10"></div>
 <ion-content padding id="page4">
+	<div><ion-row>
+        <ion-col>
+          <button ion-button clear small icon-only>
+            <ion-icon name="arrow-dropdown-circle"></ion-icon>
+            <ion-select>
+                  <ion-option (ionSelect)="goToCreerBoutique()"><ion-icon name="pricetags">Creer Boutique</ion-icon></ion-option>
+                  <ion-option (ionSelect)="goToCreerMagasin()"><ion-icon name="bookmark"></ion-icon>Creer Magasin</ion-option>
+                  <ion-option (ionSelect)="goToCreerProduit()"><ion-icon name="basket"></ion-icon>Creer Produit</ion-option>
+                  <ion-option (ionSelect)="goToCreerService()"> <ion-icon name="settings"></ion-icon>Creer Service</ion-option>
+            </ion-select>
+          </button>
+        </ion-col>
+        <ion-col>
+            <button ion-button clear small icon-only> 
+			<ion-icon name="ios-funnel"></ion-icon>
+			<ion-select>
+			  <ion-option (ionSelect)="goToListeBoutique()">Liste Boutique</ion-option>
+			  <ion-option (ionSelect)="goToListeMagasin()">Liste Magasin</ion-option>
+			  <ion-option (ionSelect)="goToListeProduit()">Liste Produits</ion-option>
+			  <ion-option (ionSelect)="goToListeService()">Liste Services</ion-option>
+            </ion-select>
+            </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button ion-button clear small (click)="goToTrier()">
+             <ion-icon name="md-options"> {{"Sort"}} </ion-icon>
+          </button> 
+        </ion-col>
+    </ion-row></div>
   <button id="fournisseurSuivi-button69" ion-button outline full on-click="goToGestionSuiviCommande()">
-    <ion-icon ios="ios-contact"></ion-icon>
-    Commande
+    <ion-icon name="book"> Commande </ion-icon>
   </button>
   <button id="fournisseurSuivi-button70" ion-button outline full on-click="goToGestionSuiviLivraison()">
-    <ion-icon ios="ios-contact"></ion-icon>
-    Livraison
+    <ion-icon name="car"> Livraison </ion-icon>
   </button>
-  <button id="fournisseurSuivi-button71" ion-button outline full on-click="goToGestionSuiviFournisseur()">
-    <ion-icon ios="ios-contact"></ion-icon>
-    Produits & Magasins
+  <button id="fournisseurSuivi-button71" ion-button outline full on-click="goToListeBoutique()">
+    <ion-icon name="pricetags"> Boutiques </ion-icon>
+  </button>
+  <button id="fournisseurSuivi-button71" ion-button outline full on-click="goToListeMagasin()">
+    <ion-icon name="bookmark"> Magasins </ion-icon>
+  </button>
+  <button id="fournisseurSuivi-button71" ion-button outline full on-click="goToListeProduit()">
+    <ion-icon name="basket"> Produits </ion-icon>
+  </button>
+    <button id="fournisseurSuivi-button71" ion-button outline full on-click="goToListeService()">
+    <ion-icon name="settings"> Services </ion-icon>
   </button>
   <button id="fournisseurSuivi-button72" ion-button outline full on-click="goToGestionSuiviPret()">
-    <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
-    Pret
+    <ion-icon name="cash"> Pret </ion-icon>
   </button>
   <button id="fournisseurSuivi-button73" ion-button outline full on-click="goToGestionSuiviCredit()">
-    <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
-    Credit
+    <ion-icon name="card"> Credit </ion-icon>
   </button>
   <button id="fournisseurSuivi-button74" ion-button outline full on-click="goToGestionSuiviDepot()">
-    <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
-    Depot
+    <ion-icon name="cube"> Depot </ion-icon>
   </button>
   <button id="fournisseurSuivi-button75" ion-button outline full on-click="goToGestionSuiviDevis()">
-    <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
-    Devis
+    <ion-icon name="filing"> Devis </ion-icon>
   </button>
   <button id="fournisseurSuivi-button77" ion-button outline full on-click="goToGestionSuiviNotations()">
-    <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
-    Notations
+    <ion-icon name="star-half"> Notations </ion-icon>
   </button>
 </ion-content>

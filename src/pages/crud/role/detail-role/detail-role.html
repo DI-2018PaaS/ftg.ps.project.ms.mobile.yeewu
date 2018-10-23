@@ -1,0 +1,25 @@
+<!--
+  Generated template for the DetailRolePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-buttons start>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+  <ion-navbar color="primary">
+    <ion-title>Details Role</ion-title>
+  </ion-navbar>
+</ion-header>
+  <ion-content padding><div><form>
+      <h3>{{role.roleUniqueID}}</h3>
+      <h3>{{role.roleName}}</h3>
+      <h3>{{role.acteurTypeID}}</h3>
+  <ion-buttons end>
+  <button ion-buttton ion-icon (click)='deleteRole(role.key)'><ion-icon name="ios-trash"></ion-icon></button>
+  <button ion-buttton ion-icon (click)='editRole()'> <ion-icon name="ios-create"></ion-icon></button>
+  </ion-buttons>
+</form></div></ion-content>

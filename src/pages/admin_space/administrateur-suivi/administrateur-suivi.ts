@@ -15,12 +15,12 @@ import { GestionSuiviDepotPage } from '../../common-espace/gestion-suivi-depot/g
 import { DetailDepotPage } from '../../common-espace/detail-depot/detail-depot';
 import { GestionSuiviDevisPage } from '../../common-espace/gestion-suivi-devis/gestion-suivi-devis';
 import { GestionSuiviProduitsPage } from '../../common-espace/gestion-suivi-produits/gestion-suivi-produits';
-import { EditerProduitPage } from '../../crud/editer-produit/editer-produit';
+import { ProduitEditPage } from '../../crud/produit/produit-edit/produit-edit';
 import { GestionSuiviEncheresPage } from '../../common-espace/gestion-suivi-encheres/gestion-suivi-encheres';
 import { DetailEncherePage } from '../../common-espace/detail-enchere/detail-enchere';
 import { GestionSuiviNotationsPage } from '../../common-espace/gestion-suivi-notations/gestion-suivi-notations';
 import { DetailNotationPage } from '../../common-espace/detail-notation/detail-notation';
-import { ViewComptePage } from '../../crud/view-compte/view-compte';
+import { DetailComptePage } from '../../crud/compte/detail-compte/detail-compte';
 
 @Component({
   selector: 'page-administrateur-suivi',
@@ -77,7 +77,7 @@ export class AdministrateurSuiviPage {
     this.navCtrl.push(GestionSuiviProduitsPage);
   }goToEditerProduit(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerProduitPage);
+    this.navCtrl.push(ProduitEditPage);
   }goToGestionSuiviEncheres(params){
     if (!params) params = {};
     this.navCtrl.push(GestionSuiviEncheresPage);
@@ -92,6 +92,6 @@ export class AdministrateurSuiviPage {
     this.navCtrl.push(DetailNotationPage);
   } goToUser(params){
     if (!params) params = {};
-    this.navCtrl.push(ViewComptePage);
+    this.navCtrl.push(DetailComptePage);
   }
 }

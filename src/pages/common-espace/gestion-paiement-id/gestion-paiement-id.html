@@ -1,15 +1,92 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
     <ion-title>
-      Gestion Paiement #ID
+      Echec Paiement
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page23">
-  <button id="gestionPaiementID-button58" ion-button color="dark" block on-click="goToGestionDesPaiements()">
+<ion-content padding id="page1">
+  <div class="spacer" style="width:300px;height:33px;" id="echecPaiement-spacer1"></div>
+  <ion-card id="echecPaiement-card21">
+    <ion-list>
+      <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">
+        <i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>
+      </div>
+      <ion-item id="echecPaiement-list-item-container2">
+        <div id="echecPaiement-markdown2" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">
+            <strong>
+              Payeur
+            </strong>
+            : Mamadou Tall
+          </p>
+        </div>
+        <div id="echecPaiement-markdown3" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">
+            <strong>
+              No# Paiement
+            </strong>
+            : 9838498
+          </p>
+        </div>
+        <div id="echecPaiement-markdown4" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">
+            <strong>
+              Date de Paiement
+            </strong>
+            : 12/10/2018
+          </p>
+        </div>
+        <div id="echecPaiement-markdown5" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">
+            <strong>
+              But de Paiement
+            </strong>
+            : Commandes
+          </p>
+        </div>
+        <div id="echecPaiement-markdown6" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">
+            <strong>
+              Type de Paiement
+            </strong>
+            : CB
+          </p>
+        </div>
+        <div id="echecPaiement-markdown14" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">
+            <strong>
+              @contact
+            </strong>
+            : email@email.com
+          </p>
+        </div>
+      </ion-item>
+      <div class="spacer" style="width:300px;height:21px;" id="echecPaiement-spacer3"></div>
+      <ion-item id="echecPaiement-list-item-container3">
+        <div id="echecPaiement-markdown8" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">
+            <strong>
+              Status
+            </strong>
+            : Echec
+          </p>
+        </div>
+        <div id="echecPaiement-markdown9" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">
+            <strong>
+              Code Rejet:
+            </strong>
+            : H89787
+          </p>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+<button id="gestionPaiementID-button58" ion-button color="dark" block on-click="goToGestionDesPaiements()">
     Retour Liste Paiements
+  </button>
+  <button id="echecPaiement-button2" ion-button color="positive" block>
+    Alerter Acheteur
   </button>
 </ion-content>

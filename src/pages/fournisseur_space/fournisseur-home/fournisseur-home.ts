@@ -1,76 +1,98 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { EditerOperationPage } from '../../crud/editer-operation/editer-operation';
-import { EditerRolePage } from '../../crud/editer-role/editer-role';
-import { EditerActivitPage } from '../../crud/editer-activit/editer-activit';
-import { EditerDomainePage } from '../../crud/editer-domaine/editer-domaine';
-import { EditerComptePage } from '../../crud/editer-compte/editer-compte';
-import { EditerMagasinPage } from '../../crud/editer-magasin/editer-magasin';
-import { EditerBoutiquePage } from '../../crud/editer-boutique/editer-boutique';
-import { EditerProduitPage } from '../../crud/editer-produit/editer-produit';
-import { EditerServicePage } from '../../crud/editer-service/editer-service';
-import { EditerCategoriePage } from '../../crud/editer-categorie/editer-categorie';
+import { OperationEditPage } from '../../crud/operation/operation-edit/operation-edit';
+import { RoleEditPage } from '../../crud/role/role-edit/role-edit';
+import { ActiviteEditPage } from '../../crud/activite/activite-edit/activite-edit';
+import { DomaineEditPage } from '../../crud/domaine/domaine-edit/domaine-edit';
+import { CompteEditPage } from '../../crud/compte/compte-edit/compte-edit';
+import { ProduitEditPage } from '../../crud/produit/produit-edit/produit-edit';
+import { ServiceEditPage } from '../../crud/service/service-edit/service-edit';
+import { CategorieEditPage } from '../../crud/categorie/categorie-edit/categorie-edit';
 import { RecherchePage } from '../../common/recherche/recherche';
 import { FiltrerPage } from '../../common/filtrer/filtrer';
 import { TrierPage } from '../../common/trier/trier';
-import { EditerOffrePage } from '../../crud/editer-offre/editer-offre';
-import { EditerEncherePage } from '../../crud/editer-enchere/editer-enchere';
+import { OffreEditPage } from '../../crud/offre/offre-edit/offre-edit';
+import { EnchereEditPage } from '../../crud/enchere/enchere-edit/enchere-edit';
 
-import { CreerOperationPage } from '../../crud/creer-operation/creer-operation';
-import { CreerRolePage } from '../../crud/creer-role/creer-role';
-import { CreerActivitPage } from '../../crud/creer-activit/creer-activit';
-import { CreerDomainePage } from '../../crud/creer-domaine/creer-domaine';
-import { CreerComptePage } from '../../crud/creer-compte/creer-compte';
-import { CreerMagasinPage } from '../../crud/creer-magasin/creer-magasin';
-import { CreerBoutiquePage } from '../../crud/creer-boutique/creer-boutique';
-import { CreerProduitPage } from '../../crud/creer-produit/creer-produit';
-import { CreerServicePage } from '../../crud/creer-service/creer-service';
-import { CreerCategoriePage } from '../../crud/creer-categorie/creer-categorie';
-import { CreerOffrePage } from '../../crud/creer-offre/creer-offre';
-import { CreerEncherePage } from '../../crud/creer-enchere/creer-enchere';
 
 import { LoginPage } from '../../common/login/login';
 import { DetailUserPage } from '../../common-espace/detail-user/detail-user';
-import { ViewComptePage } from '../../crud/view-compte/view-compte';
+import { DetailComptePage } from '../../crud/compte/detail-compte/detail-compte';
+import { OperationCreatePage } from '../../crud/operation/operation-create/operation-create';
+import { RoleCreatePage } from '../../crud/role/role-create/role-create';
+import { ActiviteCreatePage } from '../../crud/activite/activite-create/activite-create';
+import { DomaineCreatePage } from '../../crud/domaine/domaine-create/domaine-create';
+import { CompteCreatePage } from '../../crud/compte/compte-create/compte-create';
+import { ProduitCreatePage } from '../../crud/produit/produit-create/produit-create';
+import { ServiceCreatePage } from '../../crud/service/service-create/service-create';
+import { CategorieCreatePage } from '../../crud/categorie/categorie-create/categorie-create';
+import { OffreCreatePage } from '../../crud/offre/offre-create/offre-create';
+import { EnchereCreatePage } from '../../crud/enchere/enchere-create/enchere-create';
+import { CreateBoutiquePage } from '../../crud/boutique/create-boutique/create-boutique';
+import { CreateMagasinPage } from '../../crud/magasin/create-magasin/create-magasin';
+import { EditBoutiquePage } from '../../crud/boutique/edit-boutique/edit-boutique';
+import { EditMagasinPage } from '../../crud/magasin/edit-magasin/edit-magasin';
+import { ListBoutiquePage } from '../../crud/boutique/list-boutique/list-boutique';
+import { ListMagasinPage } from '../../crud/magasin/list-magasin/list-magasin';
+import { ProduitListPage } from '../../crud/produit/produit-list/produit-list';
+import { ServiceListPage } from '../../crud/service/service-list/service-list';
+import { Magasin } from '../../../models/msmagasindomains/magasin/magasin.model';
+import { DetailMagasinPage } from '../../crud/magasin/detail-magasin/detail-magasin';
+import { MagasinProvider } from '../../../providers/msmagasindomains/magasin/magasin.provider';
+
+// ajout map
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'page-fournisseur-home',
   templateUrl: 'fournisseur-home.html'
 })
 export class FournisseurHomePage {
-
-  constructor(public navCtrl: NavController) {
+	magasins : any;
+	magasin : any;
+  constructor(public navCtrl: NavController, private magasinProvider: MagasinProvider) {
+	  this.magasinProvider.getMagasinList().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+      )
+    ).subscribe(Magasins => {
+      this.magasins = Magasins;
+    }); 
+  }
+  onSearch(event)
+  {
+	console.log(event.target.value);
   }
   goToEditerOperation(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerOperationPage);
+    this.navCtrl.push(OperationEditPage);
   }goToEditerRole(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerRolePage);
+    this.navCtrl.push(RoleEditPage);
   }goToEditerActivit(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerActivitPage);
+    this.navCtrl.push(ActiviteEditPage);
   }goToEditerDomaine(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerDomainePage);
+    this.navCtrl.push(DomaineEditPage);
   }goToEditerCompte(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerComptePage);
+    this.navCtrl.push(CompteEditPage);
   }goToEditerMagasin(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerMagasinPage);
+    this.navCtrl.push(EditMagasinPage);
   }goToEditerBoutique(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerBoutiquePage);
+    this.navCtrl.push(EditBoutiquePage);
   }goToEditerProduit(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerProduitPage);
+    this.navCtrl.push(ProduitEditPage);
   }goToEditerService(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerServicePage);
+    this.navCtrl.push(ServiceEditPage);
   }goToEditerCategorie(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerCategoriePage);
+    this.navCtrl.push(CategorieEditPage);
   }goToRecherche(params){
     if (!params) params = {};
     this.navCtrl.push(RecherchePage);
@@ -82,49 +104,49 @@ export class FournisseurHomePage {
     this.navCtrl.push(TrierPage);
   }goToEditerOffre(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerOffrePage);
+    this.navCtrl.push(OffreEditPage);
   }goToEditerEnchere(params){
     if (!params) params = {};
-    this.navCtrl.push(EditerEncherePage);
+    this.navCtrl.push(EnchereEditPage);
   }
   
   goToCreerOperation(params){
     if (!params) params = {};
-    this.navCtrl.push(CreerOperationPage);
+    this.navCtrl.push(OperationCreatePage);
   }goToCreerRole(params){
     if (!params) params = {};
-    this.navCtrl.push(CreerRolePage);
+    this.navCtrl.push(RoleCreatePage);
   }goToCreerActivit(params){
     if (!params) params = {};
-    this.navCtrl.push(CreerActivitPage);
+    this.navCtrl.push(ActiviteCreatePage);
   }goToCreerDomaine(params){
     if (!params) params = {};
-    this.navCtrl.push(CreerDomainePage);
+    this.navCtrl.push(DomaineCreatePage);
   }goToCreerCompte(params){
     if (!params) params = {};
-    this.navCtrl.push(CreerComptePage);
+    this.navCtrl.push(CompteCreatePage);
   }goToCreerMagasin(params){
     if (!params) params = {};
-    this.navCtrl.push(CreerMagasinPage);
+    this.navCtrl.push(CreateMagasinPage);
   }goToCreerBoutique(params){
     if (!params) params = {};
-    this.navCtrl.push(CreerBoutiquePage);
+    this.navCtrl.push(CreateBoutiquePage);
   }goToCreerProduit(params){
     if (!params) params = {};
-    this.navCtrl.push(CreerProduitPage);
+    this.navCtrl.push(ProduitCreatePage);
   }goToCreerService(params){
     if (!params) params = {};
-    this.navCtrl.push(CreerServicePage);
+    this.navCtrl.push(ServiceCreatePage);
   }goToCreerCategorie(params){
     if (!params) params = {};
-    this.navCtrl.push(CreerCategoriePage);
+    this.navCtrl.push(CategorieCreatePage);
   }
   goToCreerOffre(params){
     if (!params) params = {};
-    this.navCtrl.push(CreerOffrePage);
+    this.navCtrl.push(OffreCreatePage);
   }goToCreerEnchere(params){
     if (!params) params = {};
-    this.navCtrl.push(CreerEncherePage);
+    this.navCtrl.push(EnchereCreatePage);
   }
   goToSearch(params){
     if (!params) params = {};
@@ -136,6 +158,35 @@ export class FournisseurHomePage {
   }
   goToUser(params){
     if (!params) params = {};
-    this.navCtrl.push(ViewComptePage);
+    this.navCtrl.push(DetailComptePage);
   }
+  
+  // Liste elements Boutiques
+  goToListeBoutique(params){
+    if (!params) params = {};
+    this.navCtrl.push(ListBoutiquePage);
+  }
+  goToListeMagasin(params){
+    if (!params) params = {};
+    this.navCtrl.push(ListMagasinPage);
+  }
+  goToListeProduit(params){
+    if (!params) params = {};
+    this.navCtrl.push(ProduitListPage);
+  }
+  goToListeService(params){
+    if (!params) params = {};
+    this.navCtrl.push(ServiceListPage);
+  }
+  // liste de magasins par defaut
+  editMagasin(p: Magasin) {
+    this.navCtrl.push(DetailMagasinPage,{mag:p});
+  }
+  seeProduct(p: Magasin) {
+    this.navCtrl.push(ProduitListPage);
+  }
+  deleteMagasin(key: string) {
+    this.magasinProvider.deleteMagasin(key);
+    this.navCtrl.push(ListMagasinPage);
+  } 
 }

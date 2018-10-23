@@ -1,12 +1,199 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Offres
-    </ion-title>
+  <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+  </button>
+    <ion-title *ngIf="!isSearchBarOpened">Offres</ion-title>
+	  <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchBarOpened=false">
+      </ion-searchbar>
+      <ion-buttons end>
+        <button ion-button icon-only *ngIf="!isSearchBarOpened" light color="shadowlite" (click)="isSearchBarOpened=true">
+          <ion-icon ios="ios-search" md="md-search">
+          </ion-icon>
+        </button> 
+        <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="goToConnexion()">
+          <ion-icon ios="ios-contact" md="md-contact">
+          </ion-icon>
+        </button> 
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page9">
-  <button id="offres-button10" ion-button color="positive" block on-click="goToDevis()">
-    offre
-  </button>
+  <ion-content id="front-offres-presentation">
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small icon-only item-left clear>
+          <ion-icon name="logo-buffer"></ion-icon>
+          <ion-select>
+                <ion-option (ionSelect)="goToOffresOwn()">Vos Offres</ion-option>
+                <ion-option (ionSelect)="goToOffresActifs()">Offres Actifs</ion-option>
+              </ion-select>
+        </button>
+      </ion-col>
+      <ion-col>
+          <button ion-button icon-start clear small icon-only item-right clear color="button-color" (click)="goToFiltrer()"> <ion-icon name="ios-funnel"></ion-icon>
+          </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button ion-button icon-start clear small icon-only clear color="button-color" (click)="goToTrier()">
+                <ion-icon name="md-options" style="margin-right:6px"></ion-icon> {{"Sort"}}
+              </button> 
+      </ion-col>
+  </ion-row>
+  <div>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="boutique">
+        Boutique
+      </ion-segment-button>
+      <ion-segment-button value="enchere">
+        Enchere
+      </ion-segment-button>
+      <ion-segment-button value="offre">
+        Offre
+      </ion-segment-button>
+      <ion-segment-button value="rating">
+        Rating
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div [ngSwitch]="segment">
+      <div>
+          <ion-row *ngSwitchCase="'boutique'">
+		  <ion-col class="col">
+    <a (click)="goToBoutiques()">
+                  <ion-card>
+                      <ion-card-content> 
+                          <img src="assets/img/logo-1.png"/> 
+                      </ion-card-content>
+                      <div text-center>
+                          <ion-label  > Activite A </ion-label>
+                      </div>
+                  </ion-card>
+              </a>
+          </ion-col>
+  <ion-col class="col">
+              <a (click)="goToBoutiques()">
+                  <ion-card>
+                      <ion-card-content> 
+                          <img src="assets/img/logo-2.png"/>
+                      </ion-card-content>
+                      <div text-center>
+                          <ion-label color="primary" > Activite B </ion-label>
+                      </div>
+                  </ion-card>
+              </a>
+          </ion-col>
+		  </ion-row>
+        </div>
+  <div>
+  <ion-list *ngSwitchCase="'offre'">
+      <ion-item *ngFor='let offre of offres'>
+      <ion-card>
+          <ion-row>
+            <ion-col>
+            <ion-row>
+            <h2>{{offre.nom}}</h2>
+            </ion-row>
+            <ion-row>
+              <div><img width="50" height="50" src="{{offre.image}}"></div>
+            </ion-row>
+            <ion-row>
+           <p>Reponses: {{offre.reponse}}</p><ion-icon name="checkmarx"></ion-icon> 
+            </ion-row>
+            <ion-row>
+           <h3 style="margin-bottom:0px;font-size:15px">
+				<span class="star-icon" [ngClass]="{full: 4 >= 1, half: 3 == 0.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 5 >= 2, half: 2 == 1.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 3 >= 3, half: 2 == 2.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 5 >= 4, half: 2 == 3.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: 3 >= 5, half: 4.5 == 4.5}">&#x2605;</span>
+          </h3>
+            </ion-row>
+            </ion-col>
+            <ion-col>
+            <ion-row>
+            <h5 ion-text color="mauve">Temps: </h5> <span text-wrap>{{(offre.date_fin - offre.date_debut)}}</span>
+            </ion-row>
+            <ion-row>
+            <button ion-button outline small item-end (click)="goToDevis()">Repondre</button>
+            </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+        </ion-item>
+  </ion-list>
+  </div>
+  <div >
+      <ion-list *ngSwitchCase="'enchere'">
+          <ion-item *ngFor='let enchere of encheres'>
+          <ion-card>
+              <ion-row>
+                <ion-col>
+                <ion-row>
+                <h2>{{enchere.nom}}</h2>
+                </ion-row>
+                <ion-row>
+                  <div (click)="goToEnchere()"><img width="50" height="50" src="{{enchere.image}}"></div>
+                </ion-row>
+                <ion-row>
+               <p>Vote: {{enchere.vote}}</p><ion-icon name="thumbs-up"></ion-icon> 
+                </ion-row>
+                <ion-row>
+                <p>Rating</p>
+                </ion-row>
+                </ion-col>
+                <ion-col>
+                <ion-row>
+                <h5 ion-text color="mauve">Temps: </h5> <span text-wrap>{{(enchere.date_fin - enchere.date_debut)}}</span>
+                </ion-row>
+                <ion-row>
+                <p>Offre: {{enchere.offre}}</p><ion-icon name="trending-down" color="danger"></ion-icon> 
+                </ion-row>
+                <ion-row>
+                <p>Courante: {{enchere.meilleur_offre}}</p><ion-icon name="trending-up" color="favorite"></ion-icon> 
+                </ion-row>
+                <ion-row>
+                <button ion-button outline small item-end (click)="goToEnchere()">+Offre</button>
+                </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-card>
+            </ion-item>
+      </ion-list>
+      </div>
+      <div *ngSwitchCase="'rating'">
+		<ion-item *ngFor='let notation of notations'>
+		<ion-card (click)="goToDetailNotation()" no-padding>
+			<ion-row>
+				<ion-col>
+				<ion-row>
+				<h2>{{notation.nom}}</h2>
+				</ion-row>
+				<!--ion-row>
+				  <rating [(ngModel)]="rate" readonly="false" 
+					small="true"
+				  (ngModelChange)="onModelChange($event)">
+				</rating>
+				</ion-row-->
+				<ion-row>
+				  <p>Emetteur: {{notation.emetteur}}</p><ion-icon name="checkmark"></ion-icon> 
+				</ion-row>
+				<ion-row>
+				<!--button ion-button outline small item-end (click)="goToDetailNotation()">Voir plus</button-->
+				<span class="rating review-star">
+				  <span class="star-icon" [ngClass]="{full: notation.average_rating >= 1, half: notation.average_rating == 0.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: notation.average_rating >= 2, half: notation.average_rating == 1.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: notation.average_rating >= 3, half: notation.average_rating == 2.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: notation.average_rating >= 4, half: notation.average_rating == 3.5}">&#x2605;</span> <span class="star-icon" [ngClass]="{full: notation.average_rating >= 5, half: notation.average_rating == 4.5}">&#x2605;</span>
+				  </span>
+				</ion-row>
+				</ion-col>
+				<ion-col>
+				<ion-row>
+				<h5 ion-text color="mauve">Date: 09/09/12</h5>
+				</ion-row>
+				<ion-row>
+				<ion-icon name="thumbs-down" color="danger"> votes: {{notation.vote_down}} </ion-icon> 
+				</ion-row>
+				<ion-row>
+				<ion-icon name="thumbs-up" color="favorite"> votes: {{notation.vote_up}} </ion-icon> 
+				</ion-row>
+				</ion-col>
+			  </ion-row>
+		</ion-card>
+	 </ion-item>
+      </div>
+</div>
 </ion-content>

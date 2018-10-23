@@ -1,12 +1,40 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Devis (Offre)
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-<ion-content padding id="page12">
-  <button id="devisOffre-button12" ion-button color="positive" block>
-    envoyer
-  </button>
-</ion-content>
+    <ion-navbar>
+      <ion-title>
+        Devis (Prévisulisation)
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding id="devis-offre-id">
+      <ion-list>
+          <ion-item >
+              #Nom   // #QTY // #Prix // #Total
+          </ion-item>
+      <ion-item>
+            #Tomate // #15 <p>10</p><p>150</p>>
+            <button ion-button clear item-end item-end on-click="goToProduitDevis()">
+              <ion-icon name="ios-copy-outline"  icon-start></ion-icon>
+            </button>
+              <button ion-button clear item-end >
+                  <ion-icon name="ios-trash-outline" icon-start></ion-icon>
+                </button>
+          </ion-item>
+            </ion-list>
+            <h3>Sous Total: 150 XOF </h3>
+            <button ion-button icon-start clear small icon-only item-left clear>
+                <ion-icon name="arrow-dropdown-circle"></ion-icon>
+              <ion-select>
+                    <ion-option (ionSelect)="goToEditerOperation()">Chronopost</ion-option>
+                    <ion-option (ionSelect)="goToEditerRole()">A Domicile</ion-option>
+                    <ion-option (ionSelect)="goToEditerActivit()">Chez Fournisseur</ion-option>
+                    <ion-option (ionSelect)="goToEditerDomaine()">DHL</ion-option>
+                  </ion-select>
+            </button>
+            <h1>TOTAL: 200 XOF</h1>
+           <button id="devisOffre-button12" ion-button color="positive" block>
+              Envoyer
+          </button>
+          <button id="devisOffre-button12" ion-button color="positive" block>
+              Editer
+          </button>
+  </ion-content>

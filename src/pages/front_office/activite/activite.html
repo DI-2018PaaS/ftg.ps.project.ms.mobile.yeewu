@@ -1,44 +1,50 @@
 <ion-header>
-        
   <ion-navbar>
-        <ion-buttons end> 
-        <button ion-button  (click)="showPanier()">
-                <ion-icon name="ios-cart" ></ion-icon>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+		<!--ion-buttons end> 
+        <button ion-button >
+                <ion-icon name="ios-cart"></ion-icon>
             </button>
-            </ion-buttons>
+            </ion-buttons-->
     <ion-title>
       Activite
     </ion-title>
+	<ion-buttons end>
+      <!--button ion-button icon-left (click)="openCart()">
+        <ion-icon name="cart"></ion-icon>
+        {{ (cartService.cartItems | async)?.length }} 
+      </button-->
+	  <button ion-button icon-left (click)="showPanier()">
+        <ion-icon name="cart"></ion-icon> 
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page16">
-
-
-
+	 <div *ngIf="activities" class="home-datas">
+        <ion-slides pager="true" loop="true" autoplay="5800">
+            <ion-slide *ngFor='let value of activities'> <img src="{{value.image}}"> </ion-slide>
+        </ion-slides>
+    </div>
   <div class="category-class">
-      <ion-list *ngFor="let produit of produits" >
-
+      <!--ion-list *ngFor="let produit of produits" >
           <ion-item>
             <ion-thumbnail item-start>
-              <img src="assets/img/tracteur1.jpg">
+              <img src="assets/img/carot.jpg">
             </ion-thumbnail>
-           
             <h4 >{{produit.designation}}</h4>
             <p> {{produit.prixUnitaire}}</p>
             <p> {{produit.descriptionProduit}}</p>
-            
-          <!-- </ion-item>
-          <ion-item> -->
                 <ion-buttons>
                         <button ion-button clear small color="danger" >
                             <ion-icon name="thumbs-up"></ion-icon>
                         </button>             
-                      
                         <button ion-button clear small color="danger" >
                             <ion-icon name="thumbs-down"></ion-icon>
                         </button>
                     </ion-buttons>
-                    
                     <ion-buttons>
                         <button ion-button clear   color="danger" >
                             <ionic3-star-rating    color="danger" 
@@ -57,13 +63,28 @@
                             <button ion-button  clear (click)="goToDetailProduit(produit)" >Detail</button>
                             <button ion-button clear  (click)="addOnPanier(produit)" ><ion-icon name="ios-cart-outline"></ion-icon></button>
                      </ion-buttons>
-
           </ion-item>
-      </ion-list>
-
-    
-
-    
+      </ion-list-->
+	  <ion-list>
+    <ion-item *ngFor="let produit of produits">
+	<!--ion-item *ngFor="let produit of produits | async"-->
+        <ion-thumbnail item-start (click)="goToDetailProduit(produit)">
+          <!--img src={{produit.image}}-->
+		  <img src="assets/img/tracteur1.jpg">
+        </ion-thumbnail>
+        <ion-row>
+          <h2 (click)="goToDetailProduit(produit)" >{{produit.designation}}</h2>
+        </ion-row>
+        <ion-row>
+            <p (click)="goToDetailProduit(produit)"> <ion-badge color="light"> XOF {{produit.prixUnitaire}} </ion-badge></p>
+        </ion-row>
+        <button ion-button clear item-end (click)="addOnPanier(produit)">
+            <ion-icon style=" font-size: 18px;" name="cart" color="danger"></ion-icon>
+        </button>
+		<button ion-button outline item-end color="secondary" (click)="gotoRating(produit)">
+            <ion-icon style=" font-size: 18px;" name="star" color="secondary"> 3.5 </ion-icon>
+        </button>
+      </ion-item>
+  </ion-list>
   </div>
-
 </ion-content>

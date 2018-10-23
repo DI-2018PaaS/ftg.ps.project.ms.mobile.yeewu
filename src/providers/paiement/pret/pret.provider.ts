@@ -11,7 +11,7 @@ import { HttpClient  } from "@angular/common/http";
 */
 @Injectable()
 export class PretProvider {
-  private dbPath = 'firebaseDecl';
+  private dbPath = 'prets-db';
  
   refPretRef: AngularFireList<Pret> = null;
 
