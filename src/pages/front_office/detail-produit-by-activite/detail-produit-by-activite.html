@@ -50,22 +50,12 @@
 			<button ion-button >
             <ion-icon name="ios-cart" (click)="showPanier()">+ Ajouter</ion-icon>
     </button>
-        </ion-buttons>
+        </ion-buttons >
+        <button ion-button outline item-end color="secondary" (click)="gotoRating(produit)">
+          <ion-icon style=" font-size: 18px;" name="star" color="secondary"> 3.5 </ion-icon>
+      </button>
 
-        <ion-buttons start>
-            <button ion-button clear   color="danger" >
-                <ionic3-star-rating    color="danger" 
-                activeIcon = "ios-star"
-                defaultIcon = "ios-star-outline"
-                activeColor = "#f53d3d" 
-                defaultColor = "#f4f4f4"
-                [minlength]=5
-                readonly="false"
-                readonly="false"
-                [rating]="5"> 
-            </ionic3-star-rating>
-            </button>
-        </ion-buttons>
+        
          
   </ion-card>
 

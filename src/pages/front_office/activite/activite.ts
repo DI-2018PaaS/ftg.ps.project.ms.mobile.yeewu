@@ -107,4 +107,9 @@ goToDetailProduit(p:Produit)
   applyCategoryFilter(event) : void{
     // TODO : filter
   }
+  showPanier()
+  {
+        this.navCtrl.push(PanierPage);
+
+  }
 }

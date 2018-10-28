@@ -30,4 +30,8 @@ export class DetailProduitByActivitePage {
     this.navCtrl.push(PanierPage);
 
   }
+
+  gotoRating(product)  : void  {
+    //this.cartService.addCartItem(this.authService.getLoggedUID(), product);
+  }
 }

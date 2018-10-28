@@ -72,11 +72,16 @@
           <!--img src={{produit.image}}-->
 		  <img src="assets/img/tracteur1.jpg">
         </ion-thumbnail>
-        <ion-row>
-          <h2 (click)="goToDetailProduit(produit)" >{{produit.designation}}</h2>
+        <ion-row >
+            <ion-col>
+          <h2 color="danger" (click)="goToDetailProduit(produit)" >{{produit.designation}}</h2>
+        </ion-col>
         </ion-row>
+        
         <ion-row>
-            <p (click)="goToDetailProduit(produit)"> <ion-badge color="light"> XOF {{produit.prixUnitaire}} </ion-badge></p>
+            <ion-col>
+            <p color="danger" (click)="goToDetailProduit(produit)"> <ion-badge color="danger"> XOF {{produit.prixUnitaire}} </ion-badge></p>
+        </ion-col>
         </ion-row>
         <button ion-button clear item-end (click)="addOnPanier(produit)">
             <ion-icon style=" font-size: 18px;" name="cart" color="danger"></ion-icon>
